@@ -34,6 +34,7 @@
   }
   ul {
     list-style: none;
+    padding: 0;
   }
 
   header,
@@ -64,7 +65,7 @@
   }
 
   .nav-item {
-    padding-left: 30px;
+    padding-left: 31px;
   }
 
   .nav-item:last-child {
@@ -108,7 +109,7 @@
     height: 330px;
     margin-top: 160px;
     margin-bottom: 330px;
-    margin-left: 140px;
+    margin-left: 80px;
 }
 h1 {
     font-family: Merriweather;
@@ -133,6 +134,7 @@ h1 {
     font-size: 20px;
     line-height: 40px;
 }
+
 .section-title {
     display: inline;
     font-family: Merriweather;
@@ -146,7 +148,7 @@ h1 {
 
 .section-inner {
     width: 50%;
-    margin: 0 auto 60px;
+    margin: 0 auto 45px;
     text-align: center;
     background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
@@ -156,18 +158,29 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 320px;
-    height: 240px;
-    padding: 0 20px;
+    /* height: 240px; */
+    /* padding: 0 20px; */
 }
 
 .section-skills {
     display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+.section-skills h4 {
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    font-weight: bold;
 }
 
 .skills-items p {
     line-height: 36px;
+    padding: 0;
     text-align: center;
     color: #FFFFFF;
+    font-weight: normal;
 }
 
 .section-portfolio {

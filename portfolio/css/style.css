@@ -110,7 +110,7 @@
     height: 330px;
     margin-top: 160px;
     margin-bottom: 330px;
-    margin-left: 140px;
+    margin-left: 60px;
 }
 h1 {
     font-family: Merriweather;
@@ -122,10 +122,11 @@ h1 {
 
 .hero-information p {
     margin-top: 10px;
-    font-size: 18px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 40px;
     color: #FFFFFF;
     padding-right: 30px;
+    margin-bottom: 25px;
 }
 .button {
     width: 220px;

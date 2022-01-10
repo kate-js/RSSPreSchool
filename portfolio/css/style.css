@@ -175,60 +175,27 @@ h1 {
 .skills-items {
     display: block;
     width: 320px;
-    height: 240px;
+    padding-top: 0;
     text-align: center;
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
 }
+
 .skills-items img {
     margin: 0;
 }
+
 .skills-items h4 {
     line-height: 40px;
+    font-size: 20px;
     font-weight: 700;
     margin: 50px 20px 20px;
+    padding-top: 5px;
 }
 .skills-items p {
     font-size: 18px;
     line-height: 36px;
-    margin: 0 20px 8px;
+    margin: 0 20px 0;
 }
-
-/* .skill-item:nth-child(1) {
-    background-size: 62px 50px;
-  } */
-
-/* .section-skill .section-inner{
-    margin-bottom: 48px;
-} */
-
-/* .skills-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 320px;
-} */
-
-/* .section-skills {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-} */
-/* .section-skills h4 {
-    padding: 0;
-    margin: 50px 0 10px;
-    font-weight: bold;
-} */
-
-/* .skills-items p {
-    margin: 0;
-    line-height: 36px;
-    padding: 0 20px 10px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 18px;
-} */
 
 .section-portfolio {
     display: flex;

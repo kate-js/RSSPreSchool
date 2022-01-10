@@ -83,6 +83,7 @@
     font-weight: bold;
     width: 70px;
   }
+
   .language_en {
     color: #BDAE82;  
 }
@@ -168,6 +169,7 @@ h1 {
     justify-content: space-between;
     padding: 0;
     margin: 0;
+    margin-top: 14px;
 }
 .section-skills h4 {
     padding: 0;
@@ -212,8 +214,13 @@ h1 {
 }
 
 .section-price {
+    padding-bottom: 100px;
+}
+
+.section-prices {
     display: flex;
     justify-content: end;
+    margin-bottom: 0;
 }
 
 .section-items {
@@ -245,16 +252,16 @@ h1 {
 
 .section-video {
     position: relative;
+    line-height: 0;
 }
 
 .button-video {
     position: absolute;
-    left: 636px;
+    left: 645px;
     top: 430px;
     background-color: transparent;
     border: none;
 }
-
 
 .price {
     width: 68px;
@@ -264,7 +271,7 @@ h1 {
     font-size: 24px;
     line-height: 48px;
     text-align: center;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     color: #BDAE82;
 
 }
@@ -279,7 +286,7 @@ h1 {
 }
 
 .section-contacts {
-    background-image: url('./assets/img/contacts\ \(1\).jpg');
+    background-image: url('./assets/img/contacts.jpg');
     height: 700px;
     background-repeat: no-repeat;
     background-position: center 0;

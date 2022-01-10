@@ -170,6 +170,7 @@ h1 {
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    width: 1400px;
 }
 
 .skills-items {

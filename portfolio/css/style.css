@@ -110,13 +110,14 @@
     height: 330px;
     margin-top: 160px;
     margin-bottom: 330px;
-    margin-left: 80px;
+    margin-left: 140px;
 }
 h1 {
     font-family: Merriweather;
     font-weight: bold;
     font-size: 60px;
     line-height: 120px;
+    margin-bottom: 0;
 }
 
 .hero-information p {
@@ -169,7 +170,7 @@ h1 {
     justify-content: space-between;
     padding: 0;
     margin: 0;
-    margin-top: 14px;
+    padding-top: 14px;
 }
 .section-skills h4 {
     padding: 0;
@@ -271,7 +272,6 @@ h1 {
     font-size: 24px;
     line-height: 48px;
     text-align: center;
-    /* margin: 20px 0; */
     color: #BDAE82;
 
 }
@@ -284,6 +284,10 @@ h1 {
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 40px;
+}
+
+.button-price {
+    padding: 6px 0;
 }
 
 .section-contact {
@@ -301,7 +305,8 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    right: 20px;
+    right: 40px;
+    
 }
 
 .section-title-contact {

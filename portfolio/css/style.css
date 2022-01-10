@@ -44,10 +44,6 @@
     padding: 0 20px;
   }
 
-  .section {
-    /* margin: 100px 0; */
-  }
-
   .container {
     margin: 0 auto;
   }
@@ -158,7 +154,9 @@ h1 {
     text-align: center;
     background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
-
+.section-skill {
+    margin-bottom: 48px;
+}
 .skills-items {
     display: flex;
     flex-direction: column;
@@ -171,24 +169,20 @@ h1 {
     justify-content: space-between;
     padding: 0;
     margin: 0;
-    padding-top: 14px;
 }
 .section-skills h4 {
     padding: 0;
-    margin: 0;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin: 50px 0 10px;
     font-weight: bold;
 }
 
 .skills-items p {
     margin: 0;
     line-height: 36px;
-    padding: 0;
-    padding-bottom: 10px;
+    padding: 0 20px 10px;
     text-align: center;
-    color: #FFFFFF;
     font-weight: normal;
+    font-size: 18px;
 }
 
 .section-portfolio {

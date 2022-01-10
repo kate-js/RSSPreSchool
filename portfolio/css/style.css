@@ -135,6 +135,10 @@ h1 {
     line-height: 40px;
 }
 
+.button:hover {
+    color:white;
+}
+
 .section-title {
     display: inline;
     font-family: Merriweather;
@@ -154,9 +158,10 @@ h1 {
     text-align: center;
     background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
-.section-skill {
+.section-skill .section-inner{
     margin-bottom: 48px;
 }
+
 .skills-items {
     display: flex;
     flex-direction: column;

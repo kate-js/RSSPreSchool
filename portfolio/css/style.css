@@ -135,6 +135,10 @@ h1 {
     line-height: 40px;
 }
 
+.button:hover {
+    color:white;
+}
+
 .section-title {
     display: inline;
     font-family: Merriweather;

@@ -45,7 +45,7 @@
   }
 
   .section {
-    margin: 100px 0;
+    /* margin: 100px 0; */
   }
 
   .container {
@@ -144,12 +144,14 @@ h1 {
     line-height: 80px;
     color: #BDAE82;
     padding: 0 20px;
+    margin: 0;
     background-color: black;
 }
 
 .section-inner {
     width: 50%;
-    margin: 0 auto 45px;
+    margin: 0 auto 60px;
+    padding-top: 100px;
     text-align: center;
     background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
@@ -165,12 +167,13 @@ h1 {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    margin: 0;
 }
 .section-skills h4 {
     padding: 0;
     margin: 0;
     margin-top: 50px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
@@ -178,6 +181,7 @@ h1 {
     margin: 0;
     line-height: 36px;
     padding: 0;
+    padding-bottom: 10px;
     text-align: center;
     color: #FFFFFF;
     font-weight: normal;
@@ -187,6 +191,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 60px auto;
 }
 
 .section-portfolio-images {
@@ -198,7 +203,6 @@ h1 {
 
 .buttons-portfolio {
     margin-right: 5px;
-    margin-bottom: 60px;
 }
 
 .no-aktiv-button {

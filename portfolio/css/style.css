@@ -265,8 +265,8 @@ h1 {
 
 .button-video {
     position: absolute;
-    left: 645px;
-    top: 430px;
+    left: 45%;
+    top: 56%;
     background-color: transparent;
     border: none;
 }

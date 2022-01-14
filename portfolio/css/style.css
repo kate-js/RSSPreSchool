@@ -285,7 +285,7 @@ h1 {
 .price-description {
     display: block;
     width: 364px;
-    padding: 0 72px;
+    padding: 0 72px 0 71px;
     font-size: 18px;
     line-height: 36px;
     text-align: center;
@@ -312,7 +312,7 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    right: 40px;
+    left: 68%;
     
 }
 
@@ -360,6 +360,12 @@ textarea {
 
 .footer-container p {
     margin: 0;
+    line-height: 50px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.footer-info {
+    display: flex;
 }
 
 .footer-social {

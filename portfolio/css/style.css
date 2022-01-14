@@ -189,13 +189,12 @@ h1 {
     line-height: 40px;
     font-size: 20px;
     font-weight: 700;
-    margin: 50px 20px 20px;
-    padding-top: 5px;
+    margin: 45px 20px 20px;
 }
 .skills-items p {
     font-size: 18px;
     line-height: 36px;
-    margin: 0 20px 0;
+    margin: 0 20px 8px;
 }
 
 .section-portfolio {

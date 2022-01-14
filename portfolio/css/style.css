@@ -247,8 +247,8 @@ h1 {
 }
 
 .section-items h3 {
-    width: 128px;
-    height: 56px;
+    /* width: 128px;
+    height: 56px; */
     font-family: Merriweather;
     font-weight: bold;
     font-size: 28px;
@@ -280,7 +280,7 @@ h1 {
     line-height: 48px;
     text-align: center;
     color: #BDAE82;
-
+    margin: 20px 0;
 }
 .price-description {
     display: block;

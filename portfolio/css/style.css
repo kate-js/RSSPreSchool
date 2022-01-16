@@ -31,6 +31,13 @@
     color: white;
     text-decoration: none;
   }
+ 
+  a:hover,
+  a:active {
+    color: #BDAE82;
+    transition-duration: 0.5s;
+  }
+
   ul {
     list-style: none;
     padding: 0;
@@ -78,6 +85,7 @@
   .footer-social li:hover{
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
       contrast(87%);
+    transition-duration: 0.5s;
   }
   .header-language {
     display: flex;
@@ -144,6 +152,7 @@ h1 {
 
 .button:hover {
     color:white;
+    transition-duration: 0.5s;
 }
 
 .section-title {
@@ -273,6 +282,7 @@ h1 {
     top: 56%;
     background-color: transparent;
     border: none;
+    transition-duration: 0.5s;
 }
 
 .price {

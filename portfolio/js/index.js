@@ -7,12 +7,14 @@ function toggleMenu() {
 }
 nav_burger.addEventListener('click', toggleMenu);
 
-//добавляем класс к nav и выходит меню
-//убираем класс у nav когда выбрана ссылка
+const navLinks = document.querySelectorAll('.nav-link');
 
-// const nav = document.querySelector('.nav');
+function closeMenu(event) {
+    console.log(event.target.classList);
+    if (event.target.classList.contains('nav-link')) {
+        nav_burger.classList.remove('open');
+        nav.classList.remove('open');
+    }
+  }
 
-// function toggleMenu() {
-    
-// }
-// nav_burger.addEventListener('click', toggleMenu);
+  navLinks.forEach((el) => el.addEventListener('click', closeMenu));

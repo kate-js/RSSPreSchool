@@ -641,13 +641,25 @@ textarea {
         margin-bottom: 0;
     }
 
-    .section-contacts {
-        position: relative;
-        margin: auto;
-        left: 0;
-        align-items: center;
+    .section-contact {
+        height: 600px;
+        background-size: cover;
     }
 
+    .section-contacts {
+        position: relative;
+        margin: 0 auto;
+        padding-top: 60px;
+        align-items: center;
+    }
+    
+    .section-title-contact {
+        width: 450px;
+        font-size: 32px;
+        line-height: 64px;
+        margin: 0 0 40px;
+        text-align: center;
+    }
     .section-contacts button {
         margin: 0 auto;
     }

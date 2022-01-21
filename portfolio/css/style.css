@@ -688,6 +688,13 @@ textarea {
         padding-left: 0;
     }
 }
+
+@media (max-width: 650px) {
+    .nav {
+        width: 400px;
+    }
+}
+
 @media (max-width: 450px) {
     .header-logo {
         margin-left: 30px;

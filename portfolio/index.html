@@ -5,22 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Inter:regular,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:regular,700&display=swap" rel="stylesheet" />
     <title>portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./css/assets/img/logo.ico" type="image/x-icon">
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="container header-container">
             <img src="./css/assets/svg/logo.svg" alt="logo" class="header-logo">
             <nav class="nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#skills">Skills</a></li>
-                    <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a href="#video">Video</a></li>
-                    <li class="nav-item"><a href="#price">Price</a></li>
-                    <li class="nav-item"><a href="#contacts">Contacts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#price">Price</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
             <div class="header-language">
@@ -28,9 +30,14 @@
                 <p>/</p>
                 <p class="language_ru">ru</p>
             </div>
+            <div class="nav-burger burger">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+              </div>
         </div>
     </header>
-    <main>
+    <main class="main">
         <div class="container main-container">
             <section class="section1 main-hero">
                 <div class="hero-information">
@@ -91,7 +98,7 @@
                 <div class="section-inner">
                     <h2 class="section-title" id="video">Video</h2>
                 </div>
-                <img src="css/assets/img/video-player.jpg" alt="Screenshot">
+                <!-- <img src="css/assets/img/video-player.jpg" alt="Screenshot"> -->
                 <button type="button" class="button-video"><img src="./css/assets/svg/Play_hover.svg" alt="play"></button>
             </section>
             <section class="section section-price">
@@ -148,7 +155,7 @@
             </section>
         </div>
     </main>
-    <footer>
+    <footer class="footer">
         <div class="container footer-container">
             <div class="footer-info">
             <span>©</span> 

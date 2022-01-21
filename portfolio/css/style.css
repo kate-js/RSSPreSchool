@@ -334,6 +334,10 @@ h1 {
 .section-video {
     position: relative;
     line-height: 0;
+    height: 945px;
+    background-image: url(./assets/img/video-player.jpg);
+    background-repeat: no-repeat;
+    background-position: 20px 240px;
 }
 
 .button-video {
@@ -597,16 +601,17 @@ textarea {
         margin-bottom: 5px;
     }
 
-    .section-video > img{
-        height: auto;
-        width: 106%;
-        /* object-position: left 21px top 50%; */
-        margin-top: 5px;
+    .section-video {
+        background-image: url(./assets/img/video-player-mini.jpg);
+        background-repeat: no-repeat;
+        background-position: 0 210px;
     }
 
-    .button-video img {
-        width: 65px;
-        height: 65px;
+    .button-video {
+        width: 75px;
+        height: 75px;
+        left: 45%;
+        top: 40%;
     }
     
     .section-prices {

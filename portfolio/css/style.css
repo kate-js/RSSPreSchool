@@ -179,7 +179,10 @@ li {
     height: 330px;
     margin-top: 160px;
     margin-bottom: 330px;
-    margin-left: 60px;
+    margin-left: 80px;
+}
+.section {
+    padding: 0 20px;
 }
 
 h1 {
@@ -331,7 +334,7 @@ h1 {
     margin-bottom: 40px;
 }
 .section-price {
-    padding: 0 20px 100px;
+    padding: 0 20px 90px;
 }
 
 .section-prices {
@@ -344,6 +347,7 @@ h1 {
 .price-currency {
     padding-left: 5px;
 }
+
 .section-items {
     display: flex;
     flex-direction: column;
@@ -432,7 +436,7 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
+    padding: 50px 20px;
 }
 
 .footer-container p {
@@ -515,6 +519,7 @@ textarea {
     .header-logo {
         margin-left: 60px;
     }
+
     .header-container {
         background-position: -5px -30px;
         background-size: auto 620px;
@@ -553,14 +558,14 @@ textarea {
     }
 
     .section-inner {
-        width: 47%;
+        width: 50%;
         margin: 0 auto 45px;
         padding-top: 80px;
     }
 
     .section-skills {
-        justify-content: space-evenly;
-        margin: 0 31px 5px;
+        justify-content: space-around;
+        margin: 0 22px 5px 18px;
     }
 
     .skills-items h4 {
@@ -669,7 +674,7 @@ textarea {
     input[type = "email"],
     textarea {
         background-color: rgba(0, 0, 0, 0.5);
-        width: auto;
+        width: 59%;
     } 
 
     .footer-container {
@@ -682,4 +687,23 @@ textarea {
         margin-top: 4px;
         padding-left: 0;
     }
+}
+@media (max-width: 450px) {
+    .header-logo {
+        margin-left: 30px;
+    }
+    .nav-burger {
+        margin-right: 30px;
+    }
+    .hero-information p {
+        width: 56%;
+    }
+    .button-price {
+        width: 170px;
+    }
+    input[type = "tel"],
+    input[type = "email"],
+    textarea {
+        width: auto;
+    } 
 }

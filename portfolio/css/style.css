@@ -672,5 +672,12 @@ textarea {
 
     .footer-container {
         flex-direction: column;
+        padding: 27px 0;
+    }
+
+    .footer-container p {
+        margin-bottom: 16px;
+        margin-top: 4px;
+        padding-left: 0;
     }
 }

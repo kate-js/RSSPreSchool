@@ -605,6 +605,7 @@ textarea {
         background-image: url(./assets/img/video-player-mini.jpg);
         background-repeat: no-repeat;
         background-position: 0 210px;
+        height: 628px;
     }
 
     .button-video {

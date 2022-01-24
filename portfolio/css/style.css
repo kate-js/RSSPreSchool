@@ -140,6 +140,7 @@ li {
 }
 .nav.open {
     right: 0;
+    transition-duration: 0.5s;
 }
 
 .line {
@@ -689,11 +690,11 @@ textarea {
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 619px) {
     .nav {
-        width: 400px;
-    }
-}
+        width: 100%;
+    }  
+} 
 
 @media (max-width: 450px) {
     .header-logo {

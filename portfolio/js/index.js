@@ -21,6 +21,7 @@ function closeMenu(event) {
 
 const sun = document.querySelector('.header-sun');
 
+//change themes
 function changeTheme() {
     const arrClass = ['body', '.section-title', '.section', '.no-aktiv-button', '.price-description', '.section-inner'];
     
@@ -43,4 +44,25 @@ function changeTheme() {
 }
 sun.addEventListener('click', changeTheme);
 
+ //change seasons in portfolio
+const portfolioBtns = document.querySelector('.portfolio-btns');
+const portfolioImages = document.querySelectorAll('.portfolio-image');
  
+function changeImage(event) {
+    console.log(event.target);
+    if(event.target.classList.contains('buttons-portfolio')) {
+        console.log('contains', event.target.dataset.season);
+        if (event.target.dataset.season === "winter") {
+                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/winter/${index + 1}.jpeg`);
+            } else if (event.target.dataset.season === "spring") {
+                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/spring/${index + 1}.jpeg`);
+            } else if (event.target.dataset.season === "summer") {
+                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/summer/${index + 1}.jpeg`);
+            } else {
+                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/autumn/${index + 1}.jpeg`);
+        };                                                         
+    };
+}; 
+
+portfolioBtns.addEventListener('click', changeImage);
+

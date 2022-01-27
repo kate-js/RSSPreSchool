@@ -18,3 +18,5 @@ function closeMenu(event) {
   }
 
   navLinks.forEach((el) => el.addEventListener('click', closeMenu));
+
+ 

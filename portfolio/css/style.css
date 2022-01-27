@@ -165,6 +165,9 @@ li {
     transform: rotate(45deg) translate(-10px, -6px);
 }
 
+.header-sun{
+    margin-left: 20px;
+}
 
   /* MAIN */
 .section1.main-hero {

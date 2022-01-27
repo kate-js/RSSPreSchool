@@ -19,4 +19,28 @@ function closeMenu(event) {
 
   navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
+const sun = document.querySelector('.header-sun');
+
+function changeTheme() {
+    const arrClass = ['body', '.section-title', '.section', '.no-aktiv-button', '.price-description', '.section-inner'];
+    
+    for (let key of arrClass) {
+        const theme = document.querySelectorAll([key]);
+        for (let keys of theme) {
+            keys.classList.toggle('light-theme');
+        }
+    }
+
+    const allHover = ['.buttons-portfolio'];
+
+    for (let prop of allHover) {
+        const themeHover = document.querySelectorAll([prop]);
+        for (let props of themeHover) {
+            props.classList.toggle('light-button');
+        }
+    }
+
+}
+sun.addEventListener('click', changeTheme);
+
  

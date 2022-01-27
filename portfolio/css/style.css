@@ -113,9 +113,10 @@ li {
     justify-content: space-between;
     font-weight: bold;
     width: 70px;
+    color: white;
 }
 
-.language_en {
+.language_aktive {
     color: #BDAE82;  
 }
 
@@ -195,6 +196,7 @@ h1 {
     font-size: 60px;
     line-height: 120px;
     margin-bottom: 0;
+    color: white;
 }
 
 .hero-information p {
@@ -232,6 +234,49 @@ h1 {
     padding: 0 20px;
     margin: 0;
     background-color: black;
+
+}
+.section-inner .section-title {
+    position: relative;
+}
+
+.section-title::before {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    right: 152px;
+}
+
+.section-title::after {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    left: 152px;
+}
+
+.portfolio .section-title::before {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    right: 222px;
+}
+.portfolio .section-title::after {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    left: 222px;
 }
 
 .section-inner {
@@ -239,7 +284,8 @@ h1 {
     margin: 0 auto 60px;
     padding-top: 100px;
     text-align: center;
-    background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+    overflow: hidden;
+    /* background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px); */
 }
 .section-skills {
     display: flex;
@@ -292,6 +338,7 @@ h1 {
 
 .buttons-portfolio {
     margin-right: 5px;
+    background: #BDAE82;
 }
 
 .no-aktiv-button {
@@ -441,6 +488,7 @@ textarea {
     justify-content: space-between;
     align-items: center;
     padding: 50px 20px;
+    background-color: black;
 }
 
 .footer-container p {
@@ -451,6 +499,7 @@ textarea {
 }
 .footer-info {
     display: flex;
+    color: white;
 }
 
 .footer-social {
@@ -469,6 +518,17 @@ textarea {
 .footer-info span{
     margin-right: 20px;
 }
+
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.light-button:hover {
+    color: white;
+    background-color: #BDAE82;
+}
+
 
 @media (max-width: 768px) {
     .container {

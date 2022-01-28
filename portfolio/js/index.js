@@ -19,11 +19,13 @@ function closeMenu(event) {
 
   navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
-const sun = document.querySelector('.header-sun');
+
 
 //change themes
+const sun = document.querySelector('.header-sun');
+
 function changeTheme() {
-    const arrClass = ['body', '.section-title', '.section', '.no-aktiv-button', '.price-description', '.section-inner'];
+    const arrClass = ['body', '.section-title', '.section', '.buttons-portfolio', '.price-description', '.section-inner'];
     
     for (let key of arrClass) {
         const theme = document.querySelectorAll([key]);
@@ -49,9 +51,7 @@ const portfolioBtns = document.querySelector('.portfolio-btns');
 const portfolioImages = document.querySelectorAll('.portfolio-image');
  
 function changeImage(event) {
-    console.log(event.target);
     if(event.target.classList.contains('buttons-portfolio')) {
-        console.log('contains', event.target.dataset.season);
         if (event.target.dataset.season === "winter") {
                 portfolioImages.forEach((img, index) => img.src = `./css/assets/img/winter/${index + 1}.jpeg`);
             } else if (event.target.dataset.season === "spring") {
@@ -66,3 +66,17 @@ function changeImage(event) {
 
 portfolioBtns.addEventListener('click', changeImage);
 
+//active button in portfolio
+
+const portfolioBut = document.querySelectorAll('.buttons-portfolio');
+
+    function changeClassActive(event) {
+
+        if(event.target.classList.contains('buttons-portfolio')){
+            const active = document.querySelector('.active-button');
+            active.classList.remove('active-button');
+            event.target.classList.add('active-button');
+        }
+    }
+
+    portfolioBut.forEach((el) => el.addEventListener('click', changeClassActive));

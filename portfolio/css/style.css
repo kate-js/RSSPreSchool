@@ -116,7 +116,7 @@ li {
     color: white;
 }
 
-.language_aktive {
+.language_active {
     color: #BDAE82;  
 }
 
@@ -336,15 +336,16 @@ h1 {
     row-gap: 25px;
 }
 
-.buttons-portfolio {
-    margin-right: 5px;
-    background: #BDAE82;
+.section-portfolio .active-button  {
+    background-color: #BDAE82;
+    color: white;
 }
 
-.no-aktiv-button {
+.buttons-portfolio {
     color: #BDAE82;
     background-color: transparent;
     border: 1px solid #BDAE82;
+    margin-right: 5px;
 }
 
 .section-video {

@@ -111,6 +111,7 @@ li {
 .header-language {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: bold;
     width: 70px;
     color: white;
@@ -578,7 +579,7 @@ textarea {
     .header-language {
         margin: 0 21px 0 auto;
         width: 80px;
-
+        
     }
     
     .header-logo {

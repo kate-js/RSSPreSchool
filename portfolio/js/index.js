@@ -1,4 +1,7 @@
 //translate
+let theme;
+let lang;
+
 const i18Obj = {
     'en': {
       'skills': 'Skills',
@@ -96,22 +99,25 @@ const i18Obj = {
     }
   }
 
-const language = document.querySelectorAll('[data-lang]');
+const languageTranslate = document.querySelectorAll('[data-lang]');
 
-function getTranslate(lang) {
-    console.log(lang);
+function getTranslate(language) {
     const dataLang = document.querySelectorAll('[data-i18]');
-    dataLang.forEach((el) => el.textContent = i18Obj[lang][el.dataset.i18]);
+    dataLang.forEach((el) => el.textContent = i18Obj[language][el.dataset.i18]);
+    lang = language;
+    localStorage.setItem('lang', language);
 }
-language.forEach((ol) => ol.addEventListener('click', () => getTranslate(ol.dataset.lang)));
+languageTranslate.forEach((ol) => ol.addEventListener('click', () => getTranslate(ol.dataset.lang)));
 
-const lang = document.querySelectorAll('.language');
-    function changeActive (event) {
-        const activeLang = document.querySelector('.language_active');
-        activeLang.classList.remove('language_active');
-        event.target.classList.add('language_active');
-    }
-lang.forEach((el) => el.addEventListener('click', changeActive));
+const langTranslate = document.querySelectorAll('.language');
+
+function changeActive (event) {
+    const activeLang = document.querySelector('.language_active');
+    activeLang.classList.remove('language_active');
+    event.target.classList.add('language_active');
+}
+
+langTranslate .forEach((el) => el.addEventListener('click', changeActive));
 
 //burger
 const nav_burger = document.querySelector('.nav-burger');
@@ -126,14 +132,13 @@ nav_burger.addEventListener('click', toggleMenu);
 const navLinks = document.querySelectorAll('.nav-link');
 
 function closeMenu(event) {
-    console.log(event.target.classList);
     if (event.target.classList.contains('nav-link')) {
         nav_burger.classList.remove('open');
         nav.classList.remove('open');
     }
   }
 
-  navLinks.forEach((el) => el.addEventListener('click', closeMenu));
+navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
 
 
@@ -142,7 +147,14 @@ const sun = document.querySelector('.header-sun');
 
 function changeTheme() {
     const arrClass = ['body', '.section-title', '.section', '.buttons-portfolio', '.price-description', '.section-inner'];
+    sun.classList.toggle('light');
     
+    if (document.querySelector('.light')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+
     for (let key of arrClass) {
         const theme = document.querySelectorAll([key]);
         for (let keys of theme) {
@@ -167,15 +179,15 @@ const portfolioBtns = document.querySelector('.portfolio-btns');
 const portfolioImages = document.querySelectorAll('.portfolio-image');
  
 function changeImage(event) {
-    if(event.target.classList.contains('buttons-portfolio')) {
+    if (event.target.classList.contains('buttons-portfolio')) {
         if (event.target.dataset.season === "winter") {
-                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/winter/${index + 1}.jpeg`);
-            } else if (event.target.dataset.season === "spring") {
-                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/spring/${index + 1}.jpeg`);
-            } else if (event.target.dataset.season === "summer") {
-                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/summer/${index + 1}.jpeg`);
-            } else {
-                portfolioImages.forEach((img, index) => img.src = `./css/assets/img/autumn/${index + 1}.jpeg`);
+            portfolioImages.forEach((img, index) => img.src = `./css/assets/img/winter/${index + 1}.jpeg`);
+        } else if (event.target.dataset.season === "spring") {
+            portfolioImages.forEach((img, index) => img.src = `./css/assets/img/spring/${index + 1}.jpeg`);
+        } else if (event.target.dataset.season === "summer") {
+            portfolioImages.forEach((img, index) => img.src = `./css/assets/img/summer/${index + 1}.jpeg`);
+        } else {
+            portfolioImages.forEach((img, index) => img.src = `./css/assets/img/autumn/${index + 1}.jpeg`);
         };                                                         
     };
 }; 
@@ -186,12 +198,35 @@ portfolioBtns.addEventListener('click', changeImage);
 
 const portfolioBut = document.querySelectorAll('.buttons-portfolio');
 
-    function changeClassActive(event) {
-        if(event.target.classList.contains('buttons-portfolio')){
-            const active = document.querySelector('.active-button');
-            active.classList.remove('active-button');
-            event.target.classList.add('active-button');
-        }
+function changeClassActive(event) {
+    if (event.target.classList.contains('buttons-portfolio')) {
+        const active = document.querySelector('.active-button');
+        active.classList.remove('active-button');
+        event.target.classList.add('active-button');
     }
+}
 
 portfolioBut.forEach((el) => el.addEventListener('click', changeClassActive));
+
+//local storage
+
+function init() {
+    lang = localStorage.getItem('lang') || 'en';
+    getTranslate(lang);
+
+    const russian = document.querySelector('.russian');
+    const english = document.querySelector('.english');
+
+    if (localStorage.getItem('lang') === 'ru') {
+        russian.classList.add('language_active');
+    } else {
+        english.classList.add('language_active');
+    }
+
+    theme = localStorage.getItem('theme') || 'dark';
+    if (localStorage.getItem('theme') === 'light') {
+        changeTheme();
+    } 
+}
+
+window.addEventListener('load', init);

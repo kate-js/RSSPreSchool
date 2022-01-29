@@ -114,14 +114,7 @@ const langTranslate = document.querySelectorAll('.language');
 function changeActive (event) {
     const activeLang = document.querySelector('.language_active');
     activeLang.classList.remove('language_active');
-
-    const russian = document.querySelector('.russian');
-
-    if (localStorage.getItem('lang') === 'ru') {
-        russian.classList.add('language_active');
-    } else {
-        event.target.classList.add('language_active');
-    }
+    event.target.classList.add('language_active');
 }
 
 langTranslate .forEach((el) => el.addEventListener('click', changeActive));
@@ -214,8 +207,16 @@ portfolioBut.forEach((el) => el.addEventListener('click', changeClassActive));
 function init() {
     lang = localStorage.getItem('lang') || 'en';
     theme = localStorage.getItem('theme') || 'dark';
-
     getTranslate(lang);
+
+    const russian = document.querySelector('.russian');
+    const english = document.querySelector('.english');
+
+    if (localStorage.getItem('lang') === 'ru') {
+        russian.classList.add('language_active');
+    } else {
+        english.classList.add('language_active');
+    }
 }
 
 window.addEventListener('load', init);

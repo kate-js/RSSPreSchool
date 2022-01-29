@@ -132,14 +132,13 @@ nav_burger.addEventListener('click', toggleMenu);
 const navLinks = document.querySelectorAll('.nav-link');
 
 function closeMenu(event) {
-    console.log(event.target.classList);
     if (event.target.classList.contains('nav-link')) {
         nav_burger.classList.remove('open');
         nav.classList.remove('open');
     }
   }
 
-  navLinks.forEach((el) => el.addEventListener('click', closeMenu));
+navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 
 
 
@@ -148,7 +147,14 @@ const sun = document.querySelector('.header-sun');
 
 function changeTheme() {
     const arrClass = ['body', '.section-title', '.section', '.buttons-portfolio', '.price-description', '.section-inner'];
+    sun.classList.toggle('light');
     
+    if (document.querySelector('.light')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+
     for (let key of arrClass) {
         const theme = document.querySelectorAll([key]);
         for (let keys of theme) {
@@ -206,7 +212,6 @@ portfolioBut.forEach((el) => el.addEventListener('click', changeClassActive));
 
 function init() {
     lang = localStorage.getItem('lang') || 'en';
-    theme = localStorage.getItem('theme') || 'dark';
     getTranslate(lang);
 
     const russian = document.querySelector('.russian');
@@ -217,6 +222,11 @@ function init() {
     } else {
         english.classList.add('language_active');
     }
+
+    theme = localStorage.getItem('theme') || 'dark';
+    if (localStorage.getItem('theme') === 'light') {
+        changeTheme();
+    } 
 }
 
 window.addEventListener('load', init);

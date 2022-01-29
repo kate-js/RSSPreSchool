@@ -249,6 +249,7 @@ h1 {
     border-bottom: 2px solid #BDAE82;
     top: 48%;
     right: 152px;
+    margin-right: 55px;
 }
 
 .section-title::after {
@@ -259,6 +260,7 @@ h1 {
     border-bottom: 2px solid #BDAE82;
     top: 48%;
     left: 152px;
+    margin-left: 55px;
 }
 
 .portfolio .section-title::before {

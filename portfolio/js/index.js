@@ -9,6 +9,10 @@ const i18Obj = {
       'hero-title': 'Alexa Rise',
       'hero-text': 'Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise',
       'hire': 'Hire me',
+      'second-title-1': 'Skills',
+      'second-title-2': 'Portfolio',
+      'second-title-3': 'Video',
+      'second-title-4': 'Price',
       'skill-title-1': 'Digital photography',
       'skill-text-1': 'High-quality photos in the studio and on the nature',
       'skill-title-2': 'Video shooting',
@@ -21,6 +25,9 @@ const i18Obj = {
       'spring': 'Spring',
       'summer': 'Summer',
       'autumn': 'Autumn',
+      'third-title-1': 'Standart',
+      'third-title-2': 'Premium',
+      'third-title-3': 'Gold',
       'price-description-1-span-1': 'One location',
       'price-description-1-span-2': '120 photos in color',
       'price-description-1-span-3': '12 photos in retouch',
@@ -49,6 +56,10 @@ const i18Obj = {
       'hero-title': 'Алекса Райс',
       'hero-text': 'Сохраните искренние эмоции, романтические переживания и счастливые моменты жизни вместе с профессиональным фотографом',
       'hire': 'Пригласить',
+      'second-title-1': 'Навыки',
+      'second-title-2': 'Портфолио',
+      'second-title-3': 'Видео',
+      'second-title-4': 'Цена',
       'skill-title-1': 'Фотография',
       'skill-text-1': 'Высококачественные фото в студии и на природе',
       'skill-title-2': 'Видеосъемка',
@@ -61,6 +72,9 @@ const i18Obj = {
       'spring': 'Весна',
       'summer': 'Лето',
       'autumn': 'Осень',
+      'third-title-1': 'Стандарт',
+      'third-title-2': 'Премиум',
+      'third-title-3': 'Голд',
       'price-description-1-span-1': 'Одна локация',
       'price-description-1-span-2': '120 цветных фото',
       'price-description-1-span-3': '12 отретушированных фото',
@@ -81,7 +95,7 @@ const i18Obj = {
       'send-message': 'Отправить'
     }
   }
-   
+
 const language = document.querySelectorAll('[data-lang]');
 
 function getTranslate(lang) {
@@ -90,6 +104,14 @@ function getTranslate(lang) {
     dataLang.forEach((el) => el.textContent = i18Obj[lang][el.dataset.i18]);
 }
 language.forEach((ol) => ol.addEventListener('click', () => getTranslate(ol.dataset.lang)));
+
+const lang = document.querySelectorAll('.language');
+    function changeActive (event) {
+        const activeLang = document.querySelector('.language_active');
+        activeLang.classList.remove('language_active');
+        event.target.classList.add('language_active');
+    }
+lang.forEach((el) => el.addEventListener('click', changeActive));
 
 //burger
 const nav_burger = document.querySelector('.nav-burger');
@@ -172,4 +194,4 @@ const portfolioBut = document.querySelectorAll('.buttons-portfolio');
         }
     }
 
-    portfolioBut.forEach((el) => el.addEventListener('click', changeClassActive));
+portfolioBut.forEach((el) => el.addEventListener('click', changeClassActive));

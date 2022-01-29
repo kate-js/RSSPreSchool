@@ -111,11 +111,13 @@ li {
 .header-language {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: bold;
     width: 70px;
+    color: white;
 }
 
-.language_en {
+.language_active {
     color: #BDAE82;  
 }
 
@@ -165,6 +167,9 @@ li {
     transform: rotate(45deg) translate(-10px, -6px);
 }
 
+.header-sun{
+    margin-left: 20px;
+}
 
   /* MAIN */
 .section1.main-hero {
@@ -192,6 +197,7 @@ h1 {
     font-size: 60px;
     line-height: 120px;
     margin-bottom: 0;
+    color: white;
 }
 
 .hero-information p {
@@ -229,6 +235,51 @@ h1 {
     padding: 0 20px;
     margin: 0;
     background-color: black;
+
+}
+.section-inner .section-title {
+    position: relative;
+}
+
+.section-title::before {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    right: 152px;
+    margin-right: 55px;
+}
+
+.section-title::after {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    left: 152px;
+    margin-left: 55px;
+}
+
+.portfolio .section-title::before {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    right: 222px;
+}
+.portfolio .section-title::after {
+    display: block;
+    width: 181%;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #BDAE82;
+    top: 48%;
+    left: 222px;
 }
 
 .section-inner {
@@ -236,7 +287,8 @@ h1 {
     margin: 0 auto 60px;
     padding-top: 100px;
     text-align: center;
-    background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+    overflow: hidden;
+    /* background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px); */
 }
 .section-skills {
     display: flex;
@@ -287,14 +339,16 @@ h1 {
     row-gap: 25px;
 }
 
-.buttons-portfolio {
-    margin-right: 5px;
+.section-portfolio .active-button  {
+    background-color: #BDAE82;
+    color: white;
 }
 
-.no-aktiv-button {
+.buttons-portfolio {
     color: #BDAE82;
     background-color: transparent;
     border: 1px solid #BDAE82;
+    margin-right: 5px;
 }
 
 .section-video {
@@ -438,6 +492,7 @@ textarea {
     justify-content: space-between;
     align-items: center;
     padding: 50px 20px;
+    background-color: black;
 }
 
 .footer-container p {
@@ -448,6 +503,7 @@ textarea {
 }
 .footer-info {
     display: flex;
+    color: white;
 }
 
 .footer-social {
@@ -466,6 +522,17 @@ textarea {
 .footer-info span{
     margin-right: 20px;
 }
+
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.light-button:hover {
+    color: white;
+    background-color: #BDAE82;
+}
+
 
 @media (max-width: 768px) {
     .container {
@@ -514,7 +581,7 @@ textarea {
     .header-language {
         margin: 0 21px 0 auto;
         width: 80px;
-
+        
     }
     
     .header-logo {

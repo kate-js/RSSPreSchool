@@ -219,6 +219,14 @@ h1 {
     line-height: 40px;
     font-family: Inter;
 }
+.button:hover, 
+.button:focus {
+	box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+	animation: button 1s;
+}
+@keyframes button{
+	0%{box-shadow: 0 0 0 0 #BDAE82}
+}
 
 .button:hover {
     color:white;
@@ -349,6 +357,12 @@ h1 {
     background-color: transparent;
     border: 1px solid #BDAE82;
     margin-right: 5px;
+}
+
+.buttons-portfolio:hover, 
+.buttons-portfolio:focus{
+	box-shadow: 0 0.5em 0.5em -0.4em #BDAE82;
+	transform: translatey(-0.65em);
 }
 
 .section-video {
@@ -662,7 +676,7 @@ textarea {
         top: calc(50% - 115px/2 - 1667.5px);
         margin-right: 0;
     }
-
+    
     .buttons-portfolio:nth-child(1){
         margin-right: 5px;
         margin-bottom: 5px;

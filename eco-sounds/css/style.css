@@ -10,6 +10,7 @@
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
 ul,
@@ -57,13 +58,15 @@ html {
 .container{
     max-width: 1440px;
     margin: 0 auto;
-    padding: 5px 20px;
 }
 
-.header-container {
+.header-container,
+.main-container,
+.footer-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    padding: 5px 20px;
+    width: calc(100% - 40px);
 }
 .header-logo {
     padding-left: 20px;
@@ -81,9 +84,31 @@ html {
 .bird {
     padding: 0 20px;
 }
-.main {
+
+.main-container {
+    position: relative;
     background-image: url('./assets/img/forest.jpeg');
     min-height: 280px;
     background-size: cover;
     height: calc(100vh - 120px);
+}
+
+.main-button {
+    position: absolute;
+}
+.footer-info {
+    display: flex;
+    align-items: center;
+}
+.footer-info p {
+    padding-right: 20px;
+}
+
+.logo-rss {
+    margin-left: auto;
+    background-image: url('./assets/svg/rss.svg');
+    width: 125px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }

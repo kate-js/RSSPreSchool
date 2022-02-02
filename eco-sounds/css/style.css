@@ -1,3 +1,4 @@
+
 /* обнуление */
 *,
 *::after,
@@ -34,3 +35,8 @@ body {
     line-height: 1;
 }
 
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    color: #fff;
+}

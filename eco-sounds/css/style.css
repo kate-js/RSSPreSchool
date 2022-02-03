@@ -85,17 +85,35 @@ html {
     padding: 0 20px;
 }
 
-.main-container {
-    position: relative;
+.main {
     background-image: url('./assets/img/forest.jpeg');
     min-height: 280px;
     background-size: cover;
     height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.main-button {
-    position: absolute;
+/* .main-container {
+    position: relative;
+} */
+
+.play-button {
+    background: url('./assets/svg/play.svg') no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    width: 160px;
+    height: 160px;
 }
+.pause-button {
+    background: url('./assets/svg/pause.svg') no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    width: 160px;
+    height: 160px;
+}
+
 .footer-info {
     display: flex;
     align-items: center;
@@ -111,4 +129,15 @@ html {
     height: 50px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.header-logo:hover,
+.bird:hover,
+.github:hover,
+.logo-rss:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.aktive {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }

@@ -1,4 +1,4 @@
-const audioLink = document.querySelectorAll('.bird');
+//const audioLink = document.querySelectorAll('.bird');
 const button = document.querySelector('.button');
 
 const audio = document.querySelector('.main-audio');
@@ -32,6 +32,8 @@ function changeTheme(e) {
         audio.play();
         button.classList.remove('play-button');
         button.classList.add('pause-button');
+        // e.target.className = 'bird';
+        // e.target.classList.add('active');
 
         if (e.target.dataset.item === 'solovey') {
             mainImage.classList.add('solovey');
@@ -48,3 +50,15 @@ function changeTheme(e) {
 }
 
 navigation.addEventListener('click', changeTheme);
+
+const birds = document.querySelectorAll('.bird');
+
+function changeActive(e) {
+    e.target.classList.add('active');
+    if (e.target.classList.contains('active')) {
+        var activeButton = document.querySelector('.active')
+        activeButton.classList.remove('active');
+        e.target.classList.add('active');
+    }
+}
+birds.forEach((el)=> el.addEventListener('click', changeActive));

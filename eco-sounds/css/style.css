@@ -95,9 +95,25 @@ html {
     align-items: center;
 }
 
-/* .main-container {
-    position: relative;
-} */
+.solovey {
+    background-image: url('./assets/img/solovey.jpeg');
+}
+
+.drozd {
+    background-image: url('./assets/img/drozd.jpeg');
+}
+
+.zarynka {
+    background-image: url('./assets/img/zarynka.jpeg');
+}
+
+.javoronok {
+    background-image: url('./assets/img/javoronok.jpeg');
+}
+
+.slavka {
+    background-image: url('./assets/img/slavka.jpeg');
+}
 
 .play-button {
     background: url('./assets/svg/play.svg') no-repeat;
@@ -138,6 +154,6 @@ html {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
-.aktive {
+.active {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }

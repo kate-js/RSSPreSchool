@@ -157,3 +157,7 @@ html {
 .active {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
+
+.button:hover {
+    filter: invert(45%) sepia(21%) saturate(638%) hue-rotate(7deg) brightness(109%) contrast(87%);
+}

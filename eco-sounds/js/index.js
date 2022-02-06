@@ -23,6 +23,8 @@ function playMusic() {
         audio.play();
         logo.classList.add('active');
     }
+    // var visibilityBlock = document.querySelector('.info-bird-visibility');
+    //     visibilityBlock.classList.remove('info-bird-visibility');
 }
 
 button.addEventListener('click', playMusic);
@@ -51,11 +53,13 @@ function changeTheme(e) {
         } else {
             mainImage.classList.add('slavka');
         }
-        // const birdBlock = document.querySelector(`.info-bird.${bird}`);
-        // var visibilityBlock = document.querySelector('.info-bird-visibility');
-        // birdBlock.classList.add('info-bird-visibility');
-        // visibilityBlock.classList.remove('info-bird-visibility');
-        // birdBlock.classList.add('info-bird-visibility');
+        const birdBlock = document.querySelector(`.info-bird.${bird}`);
+        var visibilityBlock = document.querySelector('.info-bird-visibility');
+        var infoContainer = document.querySelector('.info-container');
+
+        infoContainer.classList.add('info-container-active');
+        birdBlock.classList.add('info-bird-visibility');
+        visibilityBlock.classList.remove('info-bird-visibility');
         
     }
 }
@@ -80,6 +84,10 @@ const logo = document.querySelector('.header-logo');
         button.classList.remove('play-button');
         button.classList.add('pause-button');
         mainImage.className = 'main';
+        var visibilityBlock = document.querySelector('.info-bird-visibility');
         visibilityBlock.classList.remove('info-bird-visibility');
+
+        var infoContainer = document.querySelector('.info-container');
+        infoContainer.classList.remove('info-container-active');
     }
 logo.addEventListener('click', baseTheme);

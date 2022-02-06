@@ -101,23 +101,28 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex: 1; */
+    flex: 1;
 }
 
 .info-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex: 1; */
+    flex: 0;
     max-height: 100%;
     overflow-y: scroll;
 }
+.info-container-active {
+    flex: 1;
+}
 
 .info-bird.info-bird-visibility {
-    max-width: 500px;
+    /* max-width: 500px; */
     display: flex;
     flex-direction: column;
     max-height: 100%;
+    /* margin-left: 100px; */
+    transition: 0.5s;
     border: 10px solid rgba(255, 255, 255, .5);
 }
 

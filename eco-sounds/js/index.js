@@ -2,7 +2,6 @@
 const button = document.querySelector('.button');
 
 const audio = document.querySelector('.main-audio');
-let isPlay = false;
 
 function changeButton() {
 
@@ -19,6 +18,16 @@ function changeButton() {
 
 button.addEventListener('click', changeButton);
 
+function playMusic() {
+    if (audio.src === '') {
+        audio.src = `./css/assets/sound/forest.mp3`;
+        audio.play();
+        logo.classList.add('active');
+    }
+    
+}
+
+button.addEventListener('click', playMusic);
 
 const navigation = document.querySelector('.navigation');
 let mainImage = document.querySelector('.main');
@@ -32,8 +41,6 @@ function changeTheme(e) {
         audio.play();
         button.classList.remove('play-button');
         button.classList.add('pause-button');
-        // e.target.className = 'bird';
-        // e.target.classList.add('active');
 
         if (e.target.dataset.item === 'solovey') {
             mainImage.classList.add('solovey');
@@ -71,5 +78,6 @@ const logo = document.querySelector('.header-logo');
         audio.play();
         button.classList.remove('play-button');
         button.classList.add('pause-button');
+        mainImage.className = 'main';
     }
 logo.addEventListener('click', baseTheme);

@@ -43,9 +43,9 @@ function changeTheme(e) {
             mainImage.classList.add('zarynka');
         } else if (e.target.dataset.item === 'javoronok') {
             mainImage.classList.add('javoronok');
-        } else  {
+        } else {
             mainImage.classList.add('slavka');
-        }
+        } 
     }
 }
 
@@ -54,11 +54,22 @@ navigation.addEventListener('click', changeTheme);
 const birds = document.querySelectorAll('.bird');
 
 function changeActive(e) {
+    var activeButton = document.querySelector('.active');
     e.target.classList.add('active');
     if (e.target.classList.contains('active')) {
-        var activeButton = document.querySelector('.active')
         activeButton.classList.remove('active');
         e.target.classList.add('active');
     }
 }
+
 birds.forEach((el)=> el.addEventListener('click', changeActive));
+
+const logo = document.querySelector('.header-logo');
+    function baseTheme () {
+        audio.pause();
+        audio.src = `./css/assets/sound/forest.mp3`;
+        audio.play();
+        button.classList.remove('play-button');
+        button.classList.add('pause-button');
+    }
+logo.addEventListener('click', baseTheme);

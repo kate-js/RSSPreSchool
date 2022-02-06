@@ -44,6 +44,7 @@ body {
     font-size: 20px;
     color: #fff;
     background-color: #000;
+    
 }
 
 html {
@@ -67,6 +68,7 @@ html {
     align-items: center;
     padding: 5px 20px;
     width: calc(100% - 40px);
+    
 }
 .header-logo {
     padding-left: 20px;
@@ -115,6 +117,10 @@ html {
     background-image: url('./assets/img/slavka.jpeg');
 }
 
+.forest {
+    background-image: url('./assets/img/forest.jpeg');
+}
+
 .play-button {
     background: url('./assets/svg/play.svg') no-repeat;
     background-size: contain;
@@ -152,12 +158,15 @@ html {
 .github:hover,
 .logo-rss:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
 }
 
 .active {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
 }
 
 .button:hover {
     filter: invert(45%) sepia(21%) saturate(638%) hue-rotate(7deg) brightness(109%) contrast(87%);
+    cursor: pointer;
 }

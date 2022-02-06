@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Eco-sounds</title>
+    <link rel="icon" type="image/x-icon" href="./css/assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,700&display=swap" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container header-container">
+                <img src="./css/assets/svg/logo1.svg" alt="logo" class="header-logo bird active" data-item ="forest">
+                <audio src="./css/assets/sound/forest.mp3" id = "forest"></audio>
+                <nav class="navigation">
+                    <ul class="birds-navigation">
+                        <li class="bird" data-item ="solovey">Соловей</li>
+                        <li class="bird" data-item ="drozd">Дрозд</li>
+                        <li class="bird" data-item ="zarynka">Малиновка</li>
+                        <li class="bird" data-item ="javoronok">Жаворонок</li>
+                        <li class="bird" data-item ="slavka">Славка</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <div class="button-container">
+                <button class="button play-button"></button>
+            </div>
+            <div class="info-container">
+                <div class="info-bird solovey">
+                    <img src="css/assets/img/photo/photo-solovey.jpeg">
+                    <ul class="bird-description">
+                        <li>Мелодичные трели птицы поют с начала мая и до конца лета.</li>
+                        <li>Каждая песня соловья состоит из 12 повторяющихся элементов, которые еще называют коленами.</li>
+                        <li>Ещё к интересным фактам относится то, что соловьи часто добавляют в свои мелодии также звуки других птиц.</li>
+                    </ul>
+                </div>
+                <div class="info-bird drozd">
+                    <img src="./css/assets/img/photo/photo-drozd.jpeg">
+                    <ul class="bird-description">
+                        <li>Дрозд — лучший певец из отряда воробьиных.</li>  
+                        <li>Песня состоит только из красивых звучных свистов и коротких трелей.</li>
+                        <li>Часто ее слышно в утреннее и вечернее время. </li>
+                </div>
+                <div class="info-bird zarynka">
+                    <img src="css/assets/img/photo/photo-malinovka.jpeg">
+                    <ul class="bird-description">
+                        <li>Песня малиновки - звенящая и является одной из самых красивых птичьих песен.</li>
+                        <li>Чаще всего она поёт ранним утром и перед заходом солнца. </li>
+                        <li>Песню зарянки(альтернативное название) легко узнать — её переливчатые свисты начинаются с короткого характерного скрипа.</li>
+                        <li>Она очень оптимистична.</li>
+                    </ul>
+                </div>
+                <div class="info-bird javoronok">
+                    <img src="css/assets/img/photo/photo-javoronok.jpeg">
+                    <ul class="bird-description">
+                        <li>Песня жаворонков наполнено многочисленным количеством разнообразных и захватывающих звуков.</li>
+                        <li>Каждая фраза звучит с небольшим понижением тона.</li>
+                        <li>Пение жаворонков доставляет большинству удовольствие</li>
+                        <li>Жаворонки способны подражать звукам, которые издают птицы или животные.</li>
+                    </ul>
+                </div>
+                <div class="info-bird slavka">
+                    <img src="css/assets/img/photo/photo-slavka.jpeg">
+                    <ul class="bird-description">
+                        <li>Поют и мужские, и женские особи, очень громко и звучно.  </li>
+                        <li>Некоторые из них поют ритмично, отрывисто, другие – более нежно и мелодично, напоминая звучание флейты.</li>
+                        <li>Славки хорошо имитируют голоса других птиц, а в домашних условиях даже могут копировать человеческую речь.</li>
+                    </ul>
+                </div>
+            </div>
+            <audio class="main-audio" ></audio>
+        </main>
+        <footer class="footer">
+            <div class="container footer-container">
+                <div class="footer-info">
+                    <p>©</p>
+                    <p>2022</p>
+                    <a href="https://github.com/kate-js" class="github">github</a>
+                </div>
+                <a href="https://rs.school/js-stage0/" class="logo-rss"></a>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="js/index.js"></script>
+</html>

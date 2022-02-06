@@ -1,0 +1,224 @@
+/* обнуление */
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: #000;
+    
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+.wrapper {
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-container,
+.main-container,
+.footer-container {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    width: calc(100% - 40px);
+    
+}
+.header-logo {
+    padding-left: 20px;
+}
+.navigation {
+    margin-left: auto;
+}
+
+.birds-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bird {
+    padding: 0 20px;
+}
+
+.main {
+    background-image: url('./assets/img/forest.jpeg');
+    min-height: 280px;
+    background-size: cover;
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.info-container-active {
+    flex: 1;
+}
+
+.info-bird.info-bird-visibility {
+    /* max-width: 500px; */
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    /* margin-left: 100px; */
+    transition: 0.5s;
+    border: 10px solid rgba(255, 255, 255, .5);
+}
+
+.info-bird {
+    max-width: 500px;
+    display: none;
+    flex-direction: column;
+    max-height: 100%;
+    border: 10px solid rgba(255, 255, 255, .5);
+}
+
+.info-bird img {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.bird-description {
+    background-color: black;
+    opacity: 0.7;
+    padding: 20px;
+    text-align: center;
+}
+.bird-description li {
+    padding-bottom: 20px;
+}
+
+.solovey {
+    background-image: url('./assets/img/solovey.jpeg');
+}
+
+.drozd {
+    background-image: url('./assets/img/drozd.jpeg');
+}
+
+.zarynka {
+    background-image: url('./assets/img/zarynka.jpeg');
+}
+
+.javoronok {
+    background-image: url('./assets/img/javoronok.jpeg');
+}
+
+.slavka {
+    background-image: url('./assets/img/slavka.jpeg');
+}
+
+.forest {
+    background-image: url('./assets/img/forest.jpeg');
+}
+
+.play-button {
+    background: url('./assets/svg/play.svg') no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    width: 160px;
+    height: 160px;
+}
+.pause-button {
+    background: url('./assets/svg/pause.svg') no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    width: 160px;
+    height: 160px;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+}
+.footer-info p {
+    padding-right: 20px;
+}
+
+.logo-rss {
+    margin-left: auto;
+    background-image: url('./assets/svg/rss.svg');
+    width: 125px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header-logo:hover,
+.bird:hover,
+.github:hover,
+.logo-rss:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
+}
+
+.active {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: invert(45%) sepia(21%) saturate(638%) hue-rotate(7deg) brightness(109%) contrast(87%);
+    cursor: pointer;
+}

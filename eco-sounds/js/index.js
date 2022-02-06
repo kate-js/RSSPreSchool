@@ -1,6 +1,5 @@
 //const audioLink = document.querySelectorAll('.bird');
 const button = document.querySelector('.button');
-
 const audio = document.querySelector('.main-audio');
 
 function changeButton() {
@@ -24,7 +23,6 @@ function playMusic() {
         audio.play();
         logo.classList.add('active');
     }
-    
 }
 
 button.addEventListener('click', playMusic);
@@ -52,7 +50,13 @@ function changeTheme(e) {
             mainImage.classList.add('javoronok');
         } else {
             mainImage.classList.add('slavka');
-        } 
+        }
+        // const birdBlock = document.querySelector(`.info-bird.${bird}`);
+        // var visibilityBlock = document.querySelector('.info-bird-visibility');
+        // birdBlock.classList.add('info-bird-visibility');
+        // visibilityBlock.classList.remove('info-bird-visibility');
+        // birdBlock.classList.add('info-bird-visibility');
+        
     }
 }
 
@@ -62,11 +66,8 @@ const birds = document.querySelectorAll('.bird');
 
 function changeActive(e) {
     var activeButton = document.querySelector('.active');
+    activeButton.classList.remove('active');
     e.target.classList.add('active');
-    if (e.target.classList.contains('active')) {
-        activeButton.classList.remove('active');
-        e.target.classList.add('active');
-    }
 }
 
 birds.forEach((el)=> el.addEventListener('click', changeActive));
@@ -79,5 +80,6 @@ const logo = document.querySelector('.header-logo');
         button.classList.remove('play-button');
         button.classList.add('pause-button');
         mainImage.className = 'main';
+        visibilityBlock.classList.remove('info-bird-visibility');
     }
 logo.addEventListener('click', baseTheme);

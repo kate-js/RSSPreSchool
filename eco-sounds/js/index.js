@@ -59,8 +59,9 @@ function changeTheme(e) {
 
         infoContainer.classList.add('info-container-active');
         birdBlock.classList.add('info-bird-visibility');
-        visibilityBlock.classList.remove('info-bird-visibility');
-        
+        if (visibilityBlock) {
+            visibilityBlock.classList.remove('info-bird-visibility');
+        }
     }
 }
 
@@ -77,17 +78,21 @@ function changeActive(e) {
 birds.forEach((el)=> el.addEventListener('click', changeActive));
 
 const logo = document.querySelector('.header-logo');
-    function baseTheme () {
-        audio.pause();
-        audio.src = `./css/assets/sound/forest.mp3`;
-        audio.play();
-        button.classList.remove('play-button');
-        button.classList.add('pause-button');
-        mainImage.className = 'main';
-        var visibilityBlock = document.querySelector('.info-bird-visibility');
-        visibilityBlock.classList.remove('info-bird-visibility');
 
-        var infoContainer = document.querySelector('.info-container');
-        infoContainer.classList.remove('info-container-active');
+function baseTheme () {
+    audio.pause();
+    audio.src = `./css/assets/sound/forest.mp3`;
+    audio.play();
+    button.classList.remove('play-button');
+    button.classList.add('pause-button');
+    mainImage.className = 'main';
+    var visibilityBlock = document.querySelector('.info-bird-visibility');
+    if (visibilityBlock) {
+        visibilityBlock.classList.remove('info-bird-visibility');
     }
+    
+    var infoContainer = document.querySelector('.info-container');
+    infoContainer.classList.remove('info-container-active');
+}
+
 logo.addEventListener('click', baseTheme);

@@ -44,7 +44,7 @@ body {
     font-size: 20px;
     color: #fff;
     background-color: #000;
-    
+    transition-duration: 0.5s;
 }
 
 html {

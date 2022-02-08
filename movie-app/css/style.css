@@ -2,21 +2,29 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: cornflowerblue;
+    background-color: #22254b;
     line-height: 0;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
+
 a {
     text-decoration: none;
     color: white;
 }
+
 .container {
     max-width: 1440px;
 }
+
 .header,
 .footer {
-    background-color: rgb(53, 109, 212);
+    background-color: #373b69;
 }
 
 .footer-container,
@@ -25,6 +33,11 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+}
+
+.main-container {
+    width: 95%;
+    margin: auto;
 }
 
 .logo {
@@ -38,14 +51,50 @@ a {
     padding: 0 20px;
     height: 30px;
     width: 150px;
-    border: 2px solid cornflowerblue;
+    border: 2px solid #22254b;
     border-radius: 25px;
-    background-color: cornflowerblue;
+    background-color: #22254b;
     color: white;
 }
 
-.main {
-    height: 600px;
+.main-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.main-item {
+    background-color: #373b69;
+    margin-top: 20px ;
+    width: 300px;
+    position:relative;
+}
+
+.main-item .poster {
+    width: 300px;
+    height: 450px;
+}
+
+.info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overview {
+    width: 260px;
+    height: 200px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    max-height: 100%;
+    padding: 20px;
+    bottom: 0;
+}
+
+.footer {
+    margin-top: 20px;
 }
 
 .footer-info{
@@ -56,7 +105,7 @@ a {
 .footer-info p,
 .footer-info a {
     margin-right: 20px;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .logo-rss {

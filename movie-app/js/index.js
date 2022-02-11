@@ -4,28 +4,34 @@ async function getData() {
   const res = await fetch(url);
   const data = await res.json();
   console.log(data);
-  showData(data);
+
+  data.results.forEach(element => 
+    showData(element)
+    );
 }
 
 getData();
 
 function showData(movie) {
+  const main_items = document.querySelector('.main-items');
+  
+  const main_item = document.createElement('div');
+  main_item.classList.add('item');
+  main_items.append(main_item);
+
   const img = document.createElement('img');
-  const main_item = document.querySelector('.item')
   img.classList.add('movie-img')
-  img.src = `https://image.tmdb.org/t/p/w300/` + movie.results[1].poster_path;
+  img.src = `https://image.tmdb.org/t/p/w300/` + movie.poster_path;
   img.alt = `movie-image`;
   main_item.append(img);
 
   const div = document.createElement('div');
   div.classList.add('info');
-  div.innerHTML = `<h3>` + movie.results[1].title + `</h3>` + `<span>` + movie.results[1].vote_average + `</span>`;
+  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.vote_average + `</span>`;
   main_item.append(div);
   
   const div_description = document.createElement('div');
-  div_description.classList.add('description');
   div_description.classList.add('overview');
-  div_description.innerHTML = `<h3>` + movie.results[1].title + `</h3>` + `<span>` + movie.results[1].overview + `</span>`;
+  div_description.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.overview + `</span>`;
   main_item.append(div_description);
-
 }

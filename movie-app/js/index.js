@@ -1,20 +1,30 @@
-const url = 'https://api.themoviedb.org/3/search/movie?api_key=431d21ecf313376ee5cf686960b2e354&query=spring';
+const url = 'https://api.themoviedb.org/3/search/movie?api_key=431d21ecf313376ee5cf686960b2e354';
 
-async function getData() {
-  const res = await fetch(url);
+async function getData(query) {
+  console.log(query);
+  const res = await fetch(`${url}&query=${query}`);
   const data = await res.json();
-  console.log(data);
+
+  const main_items = document.querySelector('.main-items');
+  main_items.innerHTML = '';
 
   data.results.forEach(element => 
     showData(element)
-    );
+  );
 }
 
-getData();
+document.getElementById('form').addEventListener('submit', functSubmit);
+
+function functSubmit(e) {
+  e.preventDefault();
+  var value = document.getElementById("search").value;
+  getData(value);
+  search.value = '';
+}
 
 function showData(movie) {
   const main_items = document.querySelector('.main-items');
-  
+
   const main_item = document.createElement('div');
   main_item.classList.add('item');
   main_items.append(main_item);

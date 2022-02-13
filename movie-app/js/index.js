@@ -49,3 +49,20 @@ function showData(movie) {
 }
 
 getData('iron');
+
+const light = document.querySelector('.light');
+const dark = document.querySelector('.dark');
+
+const body = document.querySelector('.body');
+
+  function changeDarkTheme() {
+    body.classList.add('light-theme');
+    body.classList.remove('light-theme');
+  }
+
+  function changeLightTheme() {
+    body.classList.remove('light-theme');
+    body.classList.add('light-theme');
+  }
+light.addEventListener('click', changeLightTheme);
+dark.addEventListener('click', changeDarkTheme);

@@ -9,13 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:regular,700" rel="stylesheet"/>
     <title>Video-Viewer</title>
 </head>
-<body>
+<body class="body">
     <header class="header">
         <div class="container header-container">
             <img class="logo" src="./css/assets/video-logo.png">
-            <form id="form" onsubmit="functSubmit()">
-                <input autoFocus type="search" id="search" class="text" placeholder="Search" autocomplete="off">
-            </form>
+            <div class="header-info">
+                <form id="form" onsubmit="functSubmit()">
+                    <input autoFocus type="search" id="search" class="text" placeholder="Search" autocomplete="off">
+                </form>
+                <div class="theme">
+                    <img src="css/assets/moon.png" class="dark">
+                    <img src="css/assets/sun.png" class="light">
+                </div>
+            </div>
         </div>
     </header>
     <main class="main">

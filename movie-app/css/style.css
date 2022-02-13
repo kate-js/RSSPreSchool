@@ -11,6 +11,12 @@ body {
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
+
+.light-theme {
+    background-color: white;
+    /* color: #22254b; */
+}
+
 h3 {
     margin: 0;
     padding: 0;
@@ -50,6 +56,23 @@ a {
     border-radius: 30px;
 }
 
+.header-info {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.theme {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.theme img{
+    width: 25px;
+    filter: invert(100%) sepia(15%) saturate(56%) hue-rotate(31deg) brightness(228%)
+    contrast(156%);
+}
+
 .text {
     margin: 10px;
     padding: 0 20px;
@@ -72,8 +95,8 @@ a {
     width: 300px;
     position: relative;
     margin-top: 20px;
+    border: 1px solid #22254b;
 }
-
 
 .info {
     padding: 10px;
@@ -86,12 +109,12 @@ a {
 
 .info span {
     background-color: #373b69;
-    color:burlywood;
 }
 
 .result {
     padding: 10px;
     padding-top: 20px;
+    color: gray;
 }
 
 .result-value {
@@ -147,3 +170,4 @@ a {
 .button {
     transform: rotateX(10deg);
 }
+

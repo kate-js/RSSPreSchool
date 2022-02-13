@@ -58,6 +58,7 @@ const body = document.querySelector('.body');
   function changeDarkTheme() {
     body.classList.add('light-theme');
     body.classList.remove('light-theme');
+    
   }
 
   function changeLightTheme() {

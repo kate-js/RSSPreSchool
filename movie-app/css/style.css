@@ -82,7 +82,20 @@ a {
     align-items: center;
     background-color: #373b69;
     width: 280px;
+}
 
+.info span {
+    background-color: #373b69;
+    color:burlywood;
+}
+
+.result {
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.result-value {
+    color: gray;
 }
 
 .overview {
@@ -129,4 +142,8 @@ a {
     background-image: url('./assets/rss.svg');
     width: 100px;
     height: 37px;
+}
+
+.button {
+    transform: rotateX(10deg);
 }

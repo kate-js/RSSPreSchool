@@ -1,16 +1,20 @@
 const url = 'https://api.themoviedb.org/3/search/movie?api_key=431d21ecf313376ee5cf686960b2e354';
+const mainItems = document.querySelector('.main-items');
+const resultValue = document.querySelector('.result-value');
 
 async function getData(query) {
   console.log(query);
   const res = await fetch(`${url}&query=${query}`);
   const data = await res.json();
 
-  const main_items = document.querySelector('.main-items');
-  main_items.innerHTML = '';
+  mainItems.innerHTML = '';
+  
 
   data.results.forEach(element => 
     showData(element)
   );
+  
+  resultValue.innerHTML = query;
 }
 
 document.getElementById('form').addEventListener('submit', functSubmit);
@@ -19,15 +23,13 @@ function functSubmit(e) {
   e.preventDefault();
   var value = document.getElementById("search").value;
   getData(value);
-  search.value = '';
 }
 
 function showData(movie) {
-  const main_items = document.querySelector('.main-items');
 
   const main_item = document.createElement('div');
   main_item.classList.add('item');
-  main_items.append(main_item);
+  mainItems.append(main_item);
 
   const img = document.createElement('img');
   img.classList.add('movie-img')
@@ -45,3 +47,5 @@ function showData(movie) {
   div_description.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.overview + `</span>`;
   main_item.append(div_description);
 }
+
+getData('iron');

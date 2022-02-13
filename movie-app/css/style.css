@@ -1,0 +1,173 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #22254b;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.light-theme {
+    background-color: white;
+    /* color: #22254b; */
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    max-width: 1440px;
+}
+
+.header,
+.footer {
+    background-color: #373b69;
+}
+
+.footer-container,
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.main-container {
+    width: 95%;
+    margin: auto;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+.header-info {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.theme {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.theme img{
+    width: 25px;
+    filter: invert(100%) sepia(15%) saturate(56%) hue-rotate(31deg) brightness(228%)
+    contrast(156%);
+}
+
+.text {
+    margin: 10px;
+    padding: 0 20px;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #22254b;
+    border-radius: 25px;
+    background-color: #22254b;
+    color: white;
+}
+
+.main-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item {
+    background-color: #373b69;
+    width: 300px;
+    position: relative;
+    margin-top: 20px;
+    border: 1px solid #22254b;
+}
+
+.info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #373b69;
+    width: 280px;
+}
+
+.info span {
+    background-color: #373b69;
+}
+
+.result {
+    padding: 10px;
+    padding-top: 20px;
+    color: gray;
+}
+
+.result-value {
+    color: gray;
+}
+
+.overview {
+    width: 260px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    max-height: 93%;
+    padding: 20px;
+    bottom: 0;
+    line-height: 20px;
+    display: none;
+    overflow: scroll;
+}
+
+.overview h3 {
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+.overview span {
+    font-size: 16px;
+}
+
+.item:hover .overview {
+    display: block;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer-info{
+    display: flex;
+    align-items: center;
+}
+
+.footer-info p,
+.footer-info a {
+    margin-right: 20px;
+    font-weight: 400;
+}
+
+.logo-rss {
+    background-image: url('./assets/rss.svg');
+    width: 100px;
+    height: 37px;
+}
+
+.button {
+    transform: rotateX(10deg);
+}
+

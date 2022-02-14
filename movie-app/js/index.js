@@ -81,3 +81,10 @@ const theme = document.querySelector('.theme');
     }
   }
 theme.addEventListener('click', changeLightTheme);
+
+const mainLogo = document.querySelector('.logo');
+  function mainPage(){
+    getData('iron');
+    search.value = '';
+  };
+mainLogo.addEventListener('click', mainPage)

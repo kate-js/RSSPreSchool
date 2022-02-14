@@ -33,10 +33,11 @@ function showData(movie) {
 
   const img = document.createElement('img');
   img.classList.add('movie-img');
+
   if (movie.poster_path === null ||
-    movie.vote_average === null ||
-    movie.vote_average < 1) {
-      main_item.classList.add('none');
+      movie.vote_average === null ||
+      movie.vote_average < 1) {
+    main_item.classList.add('none');
   } else {
     img.src = `https://image.tmdb.org/t/p/w300/` + movie.poster_path;
   }

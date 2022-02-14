@@ -15,6 +15,7 @@ body {
 .light-theme {
     background-color: white;
 }
+
 .text.light-theme {
     background-color: white;
     color: #22254b;
@@ -190,6 +191,7 @@ a {
 .item.none {
     display: none;
 }
+
 .info span {
     padding-left: 20px;
 }

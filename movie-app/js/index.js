@@ -8,7 +8,6 @@ async function getData(query) {
   const data = await res.json();
 
   mainItems.innerHTML = '';
-  
 
   data.results.forEach(element => 
     showData(element)
@@ -29,23 +28,38 @@ function showData(movie) {
 
   const main_item = document.createElement('div');
   main_item.classList.add('item');
+
+  if(movie.poster_path === null ||
+    movie.vote_average === null ||
+    movie.vote_average < 1) {
+      main_item.classList.add('none');
+  }
+
   mainItems.append(main_item);
 
   const img = document.createElement('img');
-  img.classList.add('movie-img')
+  img.classList.add('movie-img');
   img.src = `https://image.tmdb.org/t/p/w300/` + movie.poster_path;
   img.alt = `movie-image`;
   main_item.append(img);
 
   const div = document.createElement('div');
   div.classList.add('info');
-  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span class="mark">` + movie.vote_average + `</span>`;
+  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.vote_average + `</span>`;
+    if (movie.vote_average <5) {
+      div.classList.add('red');
+    } else if (movie.vote_average >= 7) {
+      div.classList.add('green');
+    } else if (movie.vote_average >= 5 && movie.vote_average < 7) {
+      div.classList.add('orange');
+    } 
   main_item.append(div);
   
   const div_description = document.createElement('div');
   div_description.classList.add('overview');
   div_description.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.overview + `</span>`;
   main_item.append(div_description);
+
 }
 
 getData('iron');

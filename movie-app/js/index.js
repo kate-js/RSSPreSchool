@@ -18,7 +18,8 @@ async function getData(query) {
 
 document.getElementById('form').addEventListener('submit', functSubmit);
 
-function functSubmit() {
+function functSubmit(event) {
+  event.preventDefault();
   var value = document.getElementById("search").value;
   getData(value);
 }

@@ -14,7 +14,14 @@ body {
 
 .light-theme {
     background-color: white;
-    /* color: #22254b; */
+}
+
+.header.light-theme-main,
+.text.light-theme-main,
+.item.light-theme-main,
+.mark.light-theme-main,
+.footer.light-theme-main {
+    background-color: #abcdef;
 }
 
 h3 {
@@ -59,6 +66,7 @@ a {
 .header-info {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .theme {
@@ -103,11 +111,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #373b69;
+    /* background-color: #373b69; */
     width: 280px;
 }
 
-.info span {
+.mark {
     background-color: #373b69;
 }
 

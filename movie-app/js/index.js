@@ -39,7 +39,7 @@ function showData(movie) {
 
   const div = document.createElement('div');
   div.classList.add('info');
-  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.vote_average + `</span>`;
+  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span class="mark">` + movie.vote_average + `</span>`;
   main_item.append(div);
   
   const div_description = document.createElement('div');
@@ -50,20 +50,27 @@ function showData(movie) {
 
 getData('iron');
 
-const light = document.querySelector('.light');
-const dark = document.querySelector('.dark');
-
-const body = document.querySelector('.body');
-
-  function changeDarkTheme() {
-    body.classList.add('light-theme');
-    body.classList.remove('light-theme');
-    
-  }
+const theme = document.querySelector('.theme');
 
   function changeLightTheme() {
-    body.classList.remove('light-theme');
-    body.classList.add('light-theme');
+    const body = document.querySelector('.body');
+    const image = document.querySelector('.dark');
+    const elements = ['.header', '.item', '.mark', '.text', '.footer'];
+
+    body.classList.toggle('light-theme');
+    
+    for (let key of elements) {
+        const elem = document.querySelectorAll([key]);
+
+        for (let keys of elem) {
+            keys.classList.toggle('light-theme-main');
+        }
+    }
+    
+    if (body.classList.contains('light-theme')) {
+      image.src = 'css/assets/moon.png';
+    } else {
+      image.src = 'css/assets/sun.png';
+    }
   }
-light.addEventListener('click', changeLightTheme);
-dark.addEventListener('click', changeDarkTheme);
+theme.addEventListener('click', changeLightTheme);

@@ -18,8 +18,7 @@ async function getData(query) {
 
 document.getElementById('form').addEventListener('submit', functSubmit);
 
-function functSubmit(e) {
-  e.preventDefault();
+function functSubmit() {
   var value = document.getElementById("search").value;
   getData(value);
 }
@@ -29,28 +28,29 @@ function showData(movie) {
   const main_item = document.createElement('div');
   main_item.classList.add('item');
 
-  if(movie.poster_path === null ||
-    movie.vote_average === null ||
-    movie.vote_average < 1) {
-      main_item.classList.add('none');
-  }
-
   mainItems.append(main_item);
 
   const img = document.createElement('img');
   img.classList.add('movie-img');
-  img.src = `https://image.tmdb.org/t/p/w300/` + movie.poster_path;
+  if (movie.poster_path === null ||
+    movie.vote_average === null ||
+    movie.vote_average < 1) {
+      main_item.classList.add('none');
+  } else {
+    img.src = `https://image.tmdb.org/t/p/w300/` + movie.poster_path;
+  }
+  
   img.alt = `movie-image`;
   main_item.append(img);
 
   const div = document.createElement('div');
   div.classList.add('info');
-  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span>` + movie.vote_average + `</span>`;
+  div.innerHTML = `<h3>` + movie.title + `</h3>` + `<span class="">` + movie.vote_average + `</span>`;
     if (movie.vote_average <5) {
       div.classList.add('red');
     } else if (movie.vote_average >= 7) {
       div.classList.add('green');
-    } else if (movie.vote_average >= 5 && movie.vote_average < 7) {
+    } else if (movie.vote_average > 5 && movie.vote_average < 7) {
       div.classList.add('orange');
     } 
   main_item.append(div);

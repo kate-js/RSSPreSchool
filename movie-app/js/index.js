@@ -55,22 +55,15 @@ const theme = document.querySelector('.theme');
   function changeLightTheme() {
     const body = document.querySelector('.body');
     const image = document.querySelector('.dark');
-    const elements = ['.header', '.item', '.mark', '.text', '.footer'];
+    const input = document.querySelector('.text');
 
     body.classList.toggle('light-theme');
-    
-    for (let key of elements) {
-        const elem = document.querySelectorAll([key]);
-
-        for (let keys of elem) {
-            keys.classList.toggle('light-theme-main');
-        }
-    }
+    input.classList.toggle('light-theme');
     
     if (body.classList.contains('light-theme')) {
-      image.src = 'css/assets/moon.png';
+      image.src = 'css/assets/moon.svg';
     } else {
-      image.src = 'css/assets/sun.png';
+      image.src = 'css/assets/sun.svg';
     }
   }
 theme.addEventListener('click', changeLightTheme);

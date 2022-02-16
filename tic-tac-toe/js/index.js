@@ -1,12 +1,20 @@
 const area = document.getElementById('area');
 let result = '';
 let move = 0;
+const contentWrapper = document.getElementById('content');
+const modalResult = document.getElementById('modal-result-wrapper');
+const overlay = document.getElementById('overlay');
+const btnClose = document.getElementById('btn-closer');
 
 area.addEventListener('click', e => {
     if(e.target.className = 'box') {
         move % 2 === 0 ? e.target.innerHTML = 'x' : e.target.innerHTML = '0';
         move++;
         check();
+        if (move == 9){
+            result = 'ничья';
+            prepareResult(result);
+        }
     }
 });
 
@@ -38,11 +46,22 @@ const check = () => {
         ) {
             result = 'нолики';
             prepareResult(result);
-        }
+        } 
     }
 }
 const prepareResult = winner => {
-    console.log(winner);
+    if (result == 'ничья'){
+        contentWrapper.innerHTML = `${winner}!`;
+    } else {
+    contentWrapper.innerHTML = `победили ${winner}!`;
+    }
+    modalResult.style.display = 'block';
 }
 
+const closeModal = () => {
+    modalResult.style.display = 'none';
+    location.reload();
+}
 
+overlay.addEventListener('click', closeModal);
+btnClose.addEventListener('click', closeModal);

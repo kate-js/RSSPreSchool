@@ -9,6 +9,7 @@ const btnClose = document.getElementById('btn-closer');
 area.addEventListener('click', e => {
     if(e.target.className = 'box') {
         move % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = '0';
+        playStepMusic();
         move++;
         check();
         if (move == 9){
@@ -17,7 +18,6 @@ area.addEventListener('click', e => {
         }
     }
 });
-
 
 const check = () => {
     const boxes = document.getElementsByClassName('box');
@@ -49,12 +49,14 @@ const check = () => {
         } 
     }
 }
+
 const prepareResult = winner => {
     if (result == 'Ничья'){
         contentWrapper.innerHTML = `${winner}!`;
     } else {
     contentWrapper.innerHTML = `Победили ${winner}! Вы выиграли за ${move} ходов`;
     }
+    playWinMusic();
     modalResult.style.display = 'block';
 }
 
@@ -65,3 +67,18 @@ const closeModal = () => {
 
 overlay.addEventListener('click', closeModal);
 btnClose.addEventListener('click', closeModal);
+
+const audio = document.querySelector('.main-audio');
+const audioWin = document.querySelector('.audio');
+
+const playStepMusic = () => {
+    audio.src = `./css/assets/sound/step.wav`;
+    audio.play();
+    audio.currentTime = 0;
+}
+
+const playWinMusic = () => {
+    audioWin.src = `./css/assets/sound/sound.wav`;
+    audioWin.play();
+    audioWin.currentTime = 0;
+}

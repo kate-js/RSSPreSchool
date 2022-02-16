@@ -1,6 +1,5 @@
 const area = document.getElementById('area');
 let result = '';
-
 let move = 0;
 
 area.addEventListener('click', e => {
@@ -45,3 +44,5 @@ const check = () => {
 const prepareResult = winner => {
     console.log(winner);
 }
+
+

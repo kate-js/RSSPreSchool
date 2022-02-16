@@ -8,11 +8,11 @@ const btnClose = document.getElementById('btn-closer');
 
 area.addEventListener('click', e => {
     if(e.target.className = 'box') {
-        move % 2 === 0 ? e.target.innerHTML = 'x' : e.target.innerHTML = '0';
+        move % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = '0';
         move++;
         check();
         if (move == 9){
-            result = 'ничья';
+            result = 'Ничья';
             prepareResult(result);
         }
     }
@@ -33,9 +33,9 @@ const check = () => {
     ];
     for(let i = 0; i < arr.length; i++) {
         if(
-            boxes[arr[i][0]].innerHTML == 'x' &&
-            boxes[arr[i][1]].innerHTML == 'x' &&
-            boxes[arr[i][2]].innerHTML == 'x' 
+            boxes[arr[i][0]].innerHTML == 'X' &&
+            boxes[arr[i][1]].innerHTML == 'X' &&
+            boxes[arr[i][2]].innerHTML == 'X' 
         ) {
             result = 'крестики';
             prepareResult(result);
@@ -50,10 +50,10 @@ const check = () => {
     }
 }
 const prepareResult = winner => {
-    if (result == 'ничья'){
+    if (result == 'Ничья'){
         contentWrapper.innerHTML = `${winner}!`;
     } else {
-    contentWrapper.innerHTML = `победили ${winner}!`;
+    contentWrapper.innerHTML = `Победили ${winner}! Вы выиграли за ${move} ходов`;
     }
     modalResult.style.display = 'block';
 }

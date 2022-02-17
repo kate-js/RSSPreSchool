@@ -7,9 +7,7 @@ const overlay = document.getElementById('overlay');
 const btnClose = document.getElementById('btn-closer');
 const boxes = document.getElementsByClassName('box');
 
-
 let RESULTS = [];
-console.log(RESULTS);
 
 const winPlayer = () => {
     RESULTS = [...RESULTS, {Player: 1, Tie: '-', Computer: '-'}];
@@ -89,8 +87,8 @@ const closeModal = () => {
     modalResult.style.display = 'none';
     cleanBox();
     move = 0;
-    addResult();
-    
+    addResult(RESULTS);
+    localStorage.setItem('tableResult', JSON.stringify(RESULTS));
 }
 
 overlay.addEventListener('click', closeModal);
@@ -111,23 +109,23 @@ const playWinMusic = () => {
     audioWin.currentTime = 0;
 }
             
-const addResult = () => {
-    let row = document.createElement('tr');
-    row.innerHTML= '';
-    for (let i = 0; i < RESULTS.length; i++) {
+const addResult = (items) => {
+    document.querySelector('.results-table').innerHTML = '';
+    for (let i = 0; i < items.length; i++) {
+        let row = document.createElement('tr');
         row.innerHTML = `
-            <td class="numberResult">№ ${RESULTS.length}</td>
-            <td>${RESULTS[i].Player}</td>
-            <td>${RESULTS[i].Tie}</td>
-            <td>${RESULTS[i].Computer}</td>
+            <td class="numberResult">№ ${i + 1}</td>
+            <td>${items[i].Player}</td>
+            <td>${items[i].Tie}</td>
+            <td>${items[i].Computer}</td>
         `;
         document.querySelector('.results-table').appendChild(row);
-        localStorage.setItem('result', JSON.stringify(RESULTS));
     }
 }
 
 function init() {
-    localStorage.getItem( 'result' );
+    RESULTS = JSON.parse(localStorage.getItem('tableResult'));
+    addResult(RESULTS);
 }
 
 window.addEventListener('load', init);

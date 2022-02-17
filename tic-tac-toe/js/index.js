@@ -1,5 +1,5 @@
 const area = document.getElementById('area');
-let result = '';
+let resultName = '';
 let move = 0;
 const contentWrapper = document.getElementById('content');
 const modalResult = document.getElementById('modal-result-wrapper');
@@ -28,9 +28,9 @@ area.addEventListener('click', e => {
         move++;
         check();
         if (move == 9){
-            result = 'Ничья';
+            resultName = 'Ничья';
             winTie();
-            prepareResult(result);
+            prepareResult(resultName);
         }
     }
 });
@@ -52,23 +52,23 @@ const check = () => {
             boxes[arr[i][1]].innerHTML == 'X' &&
             boxes[arr[i][2]].innerHTML == 'X' 
         ) {
-            result = 'крестики';
+            resultName = 'крестики';
             winPlayer();
-            prepareResult(result);
+            prepareResult(resultName);
         } else if (
             boxes[arr[i][0]].innerHTML == '0' &&
             boxes[arr[i][1]].innerHTML == '0' &&
             boxes[arr[i][2]].innerHTML == '0'
         ) {
-            result = 'нолики';
+            resultName = 'нолики';
             winComputer();
-            prepareResult(result);
+            prepareResult(resultName);
         } 
     }
 }
 
 const prepareResult = winner => {
-    if (result == 'Ничья'){
+    if (resultName == 'Ничья'){
         contentWrapper.innerHTML = `${winner}!`;
     } else {
     contentWrapper.innerHTML = `Победили ${winner}! Вы выиграли за ${move} ходов`;
@@ -87,8 +87,8 @@ const closeModal = () => {
     modalResult.style.display = 'none';
     cleanBox();
     move = 0;
-    addResult(RESULTS);
-    localStorage.setItem('tableResult', JSON.stringify(RESULTS));
+    //addResult(RESULTS);
+    //localStorage.setItem('tableResult', JSON.stringify(RESULTS));
 }
 
 overlay.addEventListener('click', closeModal);
@@ -123,9 +123,9 @@ const addResult = (items) => {
     }
 }
 
-function init() {
-    RESULTS = JSON.parse(localStorage.getItem('tableResult'));
-    addResult(RESULTS);
-}
+// function init() {
+//     RESULTS = JSON.parse(localStorage.getItem('tableResult'));
+//     addResult(RESULTS);
+// }
 
-window.addEventListener('load', init);
+//window.addEventListener('load', init);

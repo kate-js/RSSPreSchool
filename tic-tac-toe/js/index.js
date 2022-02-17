@@ -73,8 +73,8 @@ const prepareResult = winner => {
         contentWrapper.innerHTML = `${winner}!`;
     } else {
     contentWrapper.innerHTML = `Победили ${winner}! Вы выиграли за ${move} ходов`;
-    }
     playWinMusic();
+    }
     modalResult.style.display = 'block';
 }
 

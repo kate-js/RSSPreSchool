@@ -11,15 +11,15 @@ const LIMIT = 10;
 let RESULTS = [];
 
 const winPlayer = () => {
-    RESULTS = [...RESULTS, {Player: 1, Tie: '-', Computer: '-'}];
+    RESULTS = [...RESULTS, {Player: true, Tie: false, Computer: false}];
 }
 
 const winTie = () => {
-    RESULTS = [...RESULTS, {Player: '-', Tie: 1, Computer: '-'}];
+    RESULTS = [...RESULTS, {Player: false, Tie: true, Computer: false}];
 }
 
 const winComputer = () => {
-    RESULTS = [...RESULTS, {Player: '-', Tie: '-', Computer: 1}];
+    RESULTS = [...RESULTS, {Player: false, Tie: false, Computer: true}];
 }
 
 area.addEventListener('click', e => {
@@ -88,6 +88,10 @@ const closeModal = () => {
     modalResult.style.display = 'none';
     cleanBox();
     move = 0;
+
+    if (RESULTS.length > LIMIT) {
+        RESULTS.shift();
+    }
     addResult(RESULTS);
     localStorage.setItem('tableResult', JSON.stringify(RESULTS));
 }
@@ -116,9 +120,9 @@ const addResult = (items) => {
         let row = document.createElement('tr');
         row.innerHTML = `
             <td class="numberResult">№ ${i + 1}</td>
-            <td>${items[i].Player}</td>
-            <td>${items[i].Tie}</td>
-            <td>${items[i].Computer}</td>
+            <td>${items[i].Player ? '1' : '0'}</td>
+            <td>${items[i].Tie ? '1' : '0'}</td>
+            <td>${items[i].Computer ? '1' : '0'}</td>
         `;
         document.querySelector('.results-table').appendChild(row);
     }

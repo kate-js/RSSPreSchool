@@ -5,6 +5,35 @@ const contentWrapper = document.getElementById('content');
 const modalResult = document.getElementById('modal-result-wrapper');
 const overlay = document.getElementById('overlay');
 const btnClose = document.getElementById('btn-closer');
+let allResults = {
+    "Player": [],
+    "Tie": [],
+    "Computer": []
+};
+
+const winPlayer = () => {
+    console.log('win player');
+    allResults.Player.push(1);
+    allResults.Tie.push(0);
+    allResults.Computer.push(0);
+    addResult();
+}
+
+const winTie = () => {
+    console.log('win tie');
+    allResults.Player.push(0);
+    allResults.Tie.push(1);
+    allResults.Computer.push(0);
+    addResult();
+}
+
+const winComputer = () => {
+    console.log('win computer');
+    allResults.Player.push(0);
+    allResults.Tie.push(0);
+    allResults.Computer.push(1);
+    addResult();
+}
 
 area.addEventListener('click', e => {
     if(e.target.className = 'box') {
@@ -15,6 +44,7 @@ area.addEventListener('click', e => {
         if (move == 9){
             result = 'Ничья';
             prepareResult(result);
+            winTie();
         }
     }
 });
@@ -39,6 +69,7 @@ const check = () => {
         ) {
             result = 'крестики';
             prepareResult(result);
+            winPlayer();
         } else if (
             boxes[arr[i][0]].innerHTML == '0' &&
             boxes[arr[i][1]].innerHTML == '0' &&
@@ -46,6 +77,7 @@ const check = () => {
         ) {
             result = 'нолики';
             prepareResult(result);
+            winComputer();
         } 
     }
 }
@@ -82,20 +114,17 @@ const playWinMusic = () => {
     audioWin.play();
     audioWin.currentTime = 0;
 }
-
-let allResults = {
-    "Player": [10, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    "Tie": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    "Computer": [8, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-};
-
-for(let i = 0; i < 10; i++) {
-    let row = document.createElement('tr');
-    row.innerHTML = `
-        <td>${i+1}</td>
-        <td>${allResults.Player[i]}</td>
-        <td>${allResults.Tie[i]}</td>
-        <td>${allResults.Computer[i]}</td>
-    `;
-    document.querySelector('.results-table').appendChild(row);
+            
+const addResult = () => {
+    for (let i = 0; i < allResults.Player.length; i++) {
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${i+1}</td>
+            <td>${allResults.Player[i]}</td>
+            <td>${allResults.Tie[i]}</td>
+            <td>${allResults.Computer[i]}</td>
+        `;
+        document.querySelector('.results-table').appendChild(row);
+    }
 }
+

@@ -167,3 +167,7 @@ th, td {
 .info span {
     margin-right: 10px;
 }
+.numberResult {
+    background-color: gray;
+    min-width: 45px;
+}

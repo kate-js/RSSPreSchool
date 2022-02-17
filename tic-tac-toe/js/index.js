@@ -5,34 +5,22 @@ const contentWrapper = document.getElementById('content');
 const modalResult = document.getElementById('modal-result-wrapper');
 const overlay = document.getElementById('overlay');
 const btnClose = document.getElementById('btn-closer');
-let allResults = {
-    "Player": [],
-    "Tie": [],
-    "Computer": []
-};
+const boxes = document.getElementsByClassName('box');
+
+
+let RESULTS = [];
+console.log(RESULTS);
 
 const winPlayer = () => {
-    console.log('win player');
-    allResults.Player.push(1);
-    allResults.Tie.push(0);
-    allResults.Computer.push(0);
-    addResult();
+    RESULTS = [...RESULTS, {Player: 1, Tie: '-', Computer: '-'}];
 }
 
 const winTie = () => {
-    console.log('win tie');
-    allResults.Player.push(0);
-    allResults.Tie.push(1);
-    allResults.Computer.push(0);
-    addResult();
+    RESULTS = [...RESULTS, {Player: '-', Tie: 1, Computer: '-'}];
 }
 
 const winComputer = () => {
-    console.log('win computer');
-    allResults.Player.push(0);
-    allResults.Tie.push(0);
-    allResults.Computer.push(1);
-    addResult();
+    RESULTS = [...RESULTS, {Player: '-', Tie: '-', Computer: 1}];
 }
 
 area.addEventListener('click', e => {
@@ -43,14 +31,13 @@ area.addEventListener('click', e => {
         check();
         if (move == 9){
             result = 'Ничья';
-            prepareResult(result);
             winTie();
+            prepareResult(result);
         }
     }
 });
 
 const check = () => {
-    const boxes = document.getElementsByClassName('box');
     const arr = [
         [0, 1, 2],
         [3, 4, 5],
@@ -68,16 +55,16 @@ const check = () => {
             boxes[arr[i][2]].innerHTML == 'X' 
         ) {
             result = 'крестики';
-            prepareResult(result);
             winPlayer();
+            prepareResult(result);
         } else if (
             boxes[arr[i][0]].innerHTML == '0' &&
             boxes[arr[i][1]].innerHTML == '0' &&
             boxes[arr[i][2]].innerHTML == '0'
         ) {
             result = 'нолики';
-            prepareResult(result);
             winComputer();
+            prepareResult(result);
         } 
     }
 }
@@ -92,9 +79,18 @@ const prepareResult = winner => {
     modalResult.style.display = 'block';
 }
 
+const cleanBox = () => {
+    for(let i = 0; i < boxes.length; i++){
+        boxes[i].innerHTML = '';
+    }
+}
+
 const closeModal = () => {
     modalResult.style.display = 'none';
-    location.reload();
+    cleanBox();
+    move = 0;
+    addResult();
+    
 }
 
 overlay.addEventListener('click', closeModal);
@@ -116,15 +112,22 @@ const playWinMusic = () => {
 }
             
 const addResult = () => {
-    for (let i = 0; i < allResults.Player.length; i++) {
-        let row = document.createElement('tr');
+    let row = document.createElement('tr');
+    row.innerHTML= '';
+    for (let i = 0; i < RESULTS.length; i++) {
         row.innerHTML = `
-            <td>${i+1}</td>
-            <td>${allResults.Player[i]}</td>
-            <td>${allResults.Tie[i]}</td>
-            <td>${allResults.Computer[i]}</td>
+            <td class="numberResult">№ ${RESULTS.length}</td>
+            <td>${RESULTS[i].Player}</td>
+            <td>${RESULTS[i].Tie}</td>
+            <td>${RESULTS[i].Computer}</td>
         `;
         document.querySelector('.results-table').appendChild(row);
+        localStorage.setItem('result', JSON.stringify(RESULTS));
     }
 }
 
+function init() {
+    localStorage.getItem( 'result' );
+}
+
+window.addEventListener('load', init);

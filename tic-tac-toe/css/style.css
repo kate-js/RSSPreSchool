@@ -35,16 +35,12 @@ h1 {
     justify-content: space-between;
 }
 
-.header-container {
-    justify-content: center;
-}
-
 .main-container {
     height: 100%;
     display: flex;
     justify-content: space-around;
-    /* flex-direction: column; */
     align-items: center;
+    margin-left: 100px;
 }
 
 .area-wrapper {
@@ -145,7 +141,7 @@ h1 {
 }
 
 .main {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 175px);
 }
 
 .footer-logo {
@@ -162,4 +158,8 @@ th, td {
     border: 2px solid black;
     background-color: #006A55;
     font-size: 30px;
+}
+
+.info span {
+    margin-right: 10px;
 }

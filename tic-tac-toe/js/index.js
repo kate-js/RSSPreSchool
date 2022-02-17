@@ -82,3 +82,20 @@ const playWinMusic = () => {
     audioWin.play();
     audioWin.currentTime = 0;
 }
+
+let allResults = {
+    "Player": [10, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "Tie": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "Computer": [8, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+};
+
+for(let i = 0; i < 10; i++) {
+    let row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${i+1}</td>
+        <td>${allResults.Player[i]}</td>
+        <td>${allResults.Tie[i]}</td>
+        <td>${allResults.Computer[i]}</td>
+    `;
+    document.querySelector('.results-table').appendChild(row);
+}

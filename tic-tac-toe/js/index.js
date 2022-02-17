@@ -7,6 +7,7 @@ const overlay = document.getElementById('overlay');
 const btnClose = document.getElementById('btn-closer');
 const boxes = document.getElementsByClassName('box');
 
+const LIMIT = 10;
 let RESULTS = [];
 
 const winPlayer = () => {
@@ -87,8 +88,8 @@ const closeModal = () => {
     modalResult.style.display = 'none';
     cleanBox();
     move = 0;
-    //addResult(RESULTS);
-    //localStorage.setItem('tableResult', JSON.stringify(RESULTS));
+    addResult(RESULTS);
+    localStorage.setItem('tableResult', JSON.stringify(RESULTS));
 }
 
 overlay.addEventListener('click', closeModal);
@@ -123,9 +124,9 @@ const addResult = (items) => {
     }
 }
 
-// function init() {
-//     RESULTS = JSON.parse(localStorage.getItem('tableResult'));
-//     addResult(RESULTS);
-// }
+function init() {
+    RESULTS = JSON.parse(localStorage.getItem('tableResult')) || [];
+    addResult(RESULTS);
+}
 
-//window.addEventListener('load', init);
+window.addEventListener('load', init);

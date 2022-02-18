@@ -7,6 +7,8 @@ const overlay = document.getElementById('overlay');
 const btnClose = document.getElementById('btn-closer');
 const boxes = document.getElementsByClassName('box');
 
+let shouldPlaySound = true;
+
 const LIMIT = 10;
 let RESULTS = [];
 
@@ -101,19 +103,39 @@ btnClose.addEventListener('click', closeModal);
 
 const audio = document.querySelector('.main-audio');
 const audioWin = document.querySelector('.audio');
+const audioImg = document.querySelector('.audio-img');
 
 const playStepMusic = () => {
     audio.src = `./css/assets/sound/step.wav`;
-    audio.play();
-    audio.currentTime = 0;
+    if (shouldPlaySound) {
+        audio.play();
+        audio.currentTime = 0;
+    }
 }
 
 const playWinMusic = () => {
     audioWin.src = `./css/assets/sound/sound.wav`;
-    audioWin.play();
-    audioWin.currentTime = 0;
+    if (shouldPlaySound) {
+        audioWin.play();
+        audioWin.currentTime = 0;
+    }
 }
             
+function changeAudioImg() {
+    if(audioImg.classList.contains('active')){
+        audioImg.src="./css/assets/img/audio.svg";
+        audioImg.classList.remove('active');
+        shouldPlaySound = true;
+        localStorage.setItem('sound', 'active');
+    } else {
+        audioImg.src="./css/assets/img/no-sound.svg";
+        audioImg.classList.add('active');
+        shouldPlaySound = false;
+        localStorage.setItem('sound', 'no-active');
+    }
+}
+audioImg.addEventListener('click', changeAudioImg);
+
 const addResult = (items) => {
     document.querySelector('.results-table').innerHTML = '';
     for (let i = 0; i < items.length; i++) {
@@ -128,17 +150,24 @@ const addResult = (items) => {
     }
 }
 
+const cleanButton = document.querySelector('.button');
 function cleanFunction() {
     document.querySelector('.results-table').innerHTML = '';
     RESULTS = [];
     localStorage.setItem('tableResult', JSON.stringify(RESULTS));
 }
-
-const cleanButton = document.addEventListener('click', cleanFunction);
+cleanButton.addEventListener('click', cleanFunction);
 
 function init() {
     RESULTS = JSON.parse(localStorage.getItem('tableResult')) || [];
     addResult(RESULTS);
+
+    if(localStorage.getItem('sound') === 'no-active'){
+        audioImg.classList.remove('active');
+    } else {
+        audioImg.classList.add('active');
+    }
+    changeAudioImg();
 }
 
 window.addEventListener('load', init);

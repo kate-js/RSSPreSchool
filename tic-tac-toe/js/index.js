@@ -27,7 +27,14 @@ const winComputer = () => {
 area.addEventListener('click', e => {
     if(e.target.className = 'box') {
         if(e.target.innerHTML === ''){
-            move % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = '0';
+            if(move % 2 === 0 ){
+                e.target.innerHTML = 'X';
+                e.target.classList.add('gray');
+            } else {
+                e.target.innerHTML = '0';
+                e.target.classList.add('green');
+            };
+
             playStepMusic();
             move++;
             check();
@@ -87,6 +94,8 @@ const prepareResult = winner => {
 const cleanBox = () => {
     for(let i = 0; i < boxes.length; i++){
         boxes[i].innerHTML = '';
+        boxes[i].classList.remove('gray');
+        boxes[i].classList.remove('green');
     }
 }
 

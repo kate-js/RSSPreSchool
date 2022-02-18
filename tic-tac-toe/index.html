@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container header-container">
+                <div>
+                    <img src="css/assets/img/logo.png" width="50">
+                </div>
+                <h1>tic-tac-toe</h1>
+                <div>
+                    <img src="css/assets/img/audio.svg" width="50" class="audio-img ">
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <audio class="main-audio" ></audio>
+            <audio class="audio" ></audio>
+            <div class="container main-container">
+                <div class="results">
+                    <table>
+                        <caption class="cap">Таблица результатов</caption>
+                        <thead>
+                            <tr class="names">
+                                <th></th>
+                                <th>X</th>
+                                <th>Tie</th>
+                                <th>0</th>
+                            </tr>
+                        </thead>
+                        <tbody class="results-table">
+                            
+                        </tbody>
+                    </table>
+                    <button class="button">Сбросить</button>
+                </div>
+                <div class="area-wrapper">
+                    <div id="area">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+                <div id="modal-result-wrapper">
+                    <div id="overlay"></div>
+                    <div id="modal-window">
+                        <div id="content">content</div>
+                        <div id="btn-closer">
+                            <p>Start new game</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container footer-container">
+                <div class="info">
+                    <span>@</span>
+                    <span>2022</span>
+                    <a href="https://github.com/kate-js">github</a>
+                </div>
+                <a href="https://rs.school/js-stage0/"><img src="./css/assets/img/RSS-logo.svg" class="footer-logo"></a>
+            </div>  
+        </footer>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

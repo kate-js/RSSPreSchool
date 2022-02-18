@@ -26,14 +26,18 @@ const winComputer = () => {
 
 area.addEventListener('click', e => {
     if(e.target.className = 'box') {
-        move % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = '0';
-        playStepMusic();
-        move++;
-        check();
-        if (move == 9){
-            resultName = 'Ничья';
-            winTie();
-            prepareResult(resultName);
+        if(e.target.innerHTML === ''){
+            move % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = '0';
+            playStepMusic();
+            move++;
+            check();
+            if (move == 9){
+                resultName = 'Ничья';
+                winTie();
+                prepareResult(resultName);
+            }
+        } else {
+            alert('Выбери другое поле');
         }
     }
 });
@@ -74,7 +78,7 @@ const prepareResult = winner => {
     if (resultName == 'Ничья'){
         contentWrapper.innerHTML = `${winner}!`;
     } else {
-    contentWrapper.innerHTML = `Победили ${winner}! Вы выиграли за ${move} ходов`;
+    contentWrapper.innerHTML = `Победили ${winner}! Вы выиграли за ${Math.round(move/2)} хода`;
     playWinMusic();
     }
     modalResult.style.display = 'block';

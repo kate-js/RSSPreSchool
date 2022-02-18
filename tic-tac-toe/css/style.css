@@ -167,7 +167,23 @@ th, td {
 .info span {
     margin-right: 10px;
 }
+
 .numberResult {
     background-color: gray;
     min-width: 45px;
+}
+
+.button {
+    width: 107px;
+    color: white;
+    background-color: #006A55;
+    border: 1px solid #006A55;
+    margin-top: 30px;
+    padding: 5px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

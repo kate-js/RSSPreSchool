@@ -128,6 +128,14 @@ const addResult = (items) => {
     }
 }
 
+function cleanFunction() {
+    document.querySelector('.results-table').innerHTML = '';
+    RESULTS = [];
+    localStorage.setItem('tableResult', JSON.stringify(RESULTS));
+}
+
+const cleanButton = document.addEventListener('click', cleanFunction);
+
 function init() {
     RESULTS = JSON.parse(localStorage.getItem('tableResult')) || [];
     addResult(RESULTS);

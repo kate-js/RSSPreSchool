@@ -4,28 +4,30 @@
 Used Technologies: JS, HTML, CSS.
 
 ## Completed projects:
-1. eco-sounds
+### 1. Eco-sounds
+Task: https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/eco-sounds/
+#### Deploy:
 https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/eco-sounds/
-## Deploy:
-https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/eco-sounds/
 
-2. movie-app
-https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/movie-app/
-## Deploy:
+### 2. Movie-app
+Task: https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/movie-app/
+#### Deploy:
 https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/movie-app/
 
-3. tic-tac-toe
-https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/tic-tac-toe/
-## Deploy:
+### 3. Tic-tac-toe
+Task: https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/tic-tac-toe/
+#### Deploy:
 https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/tic-tac-toe/
 
-4. portfolio
-https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/portfolio/
-## Deploy:
+### 4. Portfolio
+Task: https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/portfolio/
+#### Deploy:
 https://rolling-scopes-school.github.io/kate-js-JSFEPRESCHOOL/portfolio/
 
-## The original repository:
+##
+
+### The original repository:
 https://github.com/rolling-scopes-school/kate-js-JSFEPRESCHOOL
 
-## The RSSchool's website:
+### The RSSchool's website:
 https://rs.school/
